@@ -4,7 +4,7 @@
 # https://github.com/aquaproj/aqua-registry/tree/main/pkgs
 registries:
   - type: standard
-    ref: v4.196.0 # renovate: depName=aquaproj/aqua-registry
+    ref: v4.198.0 # renovate: depName=aquaproj/aqua-registry
 packages:
   - name: x-motemen/ghq@v1.6.1
   - name: junegunn/fzf@0.53.0
