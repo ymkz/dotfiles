@@ -1,6 +1,6 @@
 [tools]
 node = "20"
-java = "21"
+java = "21.0.4+7.0.LTS"
 
 "npm:pnpm" = "latest"
 "npm:@antfu/ni" = "latest"
