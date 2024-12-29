@@ -17,7 +17,7 @@ packages:
   - name: sharkdp/fd@v10.2.0
   - name: dundee/gdu@v5.29.0
   - name: stateful/runme@v3.10.2
-  - name: k1LoW/runn@v0.125.0
+  - name: k1LoW/runn@v0.125.1
   # - name: k1LoW/tbls@v1.79.4
   # - name: sqlc-dev/sqlc@v1.27.0
   # - name: kubernetes/kubectl@v1.32.0
