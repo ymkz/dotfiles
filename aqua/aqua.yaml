@@ -19,7 +19,7 @@ packages:
   - name: dundee/gdu@v5.30.1
   - name: stateful/runme@v3.10.3
   - name: aquasecurity/trivy@v0.58.2
-  - name: k1LoW/runn@v0.127.1
+  - name: k1LoW/runn@v0.127.2
   - name: k1LoW/tbls@v1.79.4
   # - name: sqlc-dev/sqlc@v1.27.0
   # - name: kubernetes/kubectl@v1.32.1
