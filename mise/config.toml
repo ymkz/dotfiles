@@ -1,6 +1,6 @@
 [tools]
 node = "22"
-java = "21"
+java = "21.0.6+7.0.LTS"
 quarkus = "latest"
 
 "npm:pnpm" = "latest"
