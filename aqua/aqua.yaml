@@ -23,7 +23,7 @@ packages:
   - name: k1LoW/tbls@v1.80.0
   # - name: sqlc-dev/sqlc@v1.27.0
   # - name: kubernetes/kubectl@v1.32.1
-  # - name: kubernetes/minikube@v1.34.0
+  # - name: kubernetes/minikube@v1.35.0
   # - name: ahmetb/kubectx@v0.9.5
   # - name: ahmetb/kubectx/kubens@v0.9.5
   # - name: stern/stern@v1.31.0
