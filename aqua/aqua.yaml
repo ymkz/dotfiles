@@ -4,7 +4,7 @@
 # https://github.com/aquaproj/aqua-registry/tree/main/pkgs
 registries:
   - type: standard
-    ref: v4.305.0 # renovate: depName=aquaproj/aqua-registry
+    ref: v4.307.0 # renovate: depName=aquaproj/aqua-registry
 packages:
   - name: atuinsh/atuin@v18.4.0
   - name: jdx/mise@v2025.1.16
