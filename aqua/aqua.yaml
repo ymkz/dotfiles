@@ -26,4 +26,4 @@ packages:
   # - name: kubernetes/minikube@v1.35.0
   # - name: ahmetb/kubectx@v0.9.5
   # - name: ahmetb/kubectx/kubens@v0.9.5
-  # - name: stern/stern@v1.31.0
+  # - name: stern/stern@v1.32.0
