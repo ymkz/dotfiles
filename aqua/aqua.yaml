@@ -21,7 +21,7 @@ packages:
   - name: aquasecurity/trivy@v0.59.1
   - name: k1LoW/runn@v0.127.4
   - name: k1LoW/tbls@v1.80.0
-  # - name: sqlc-dev/sqlc@v1.27.0
+  # - name: sqlc-dev/sqlc@v1.28.0
   # - name: kubernetes/kubectl@v1.32.1
   # - name: kubernetes/minikube@v1.35.0
   # - name: ahmetb/kubectx@v0.9.5
