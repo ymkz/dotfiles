@@ -30,6 +30,7 @@ fi
 # fetch zsh plugins
 if [[ ! -e "${HOME}/.local/share/zsh" ]]; then
   mkdir -p "${HOME}/.local/share/zsh"
+  git clone https://github.com/azu/ni.zsh "${HOME}/.local/share/zsh/ni.zsh"
   git clone https://github.com/sindresorhus/pure "${HOME}/.local/share/zsh/pure"
   git clone https://github.com/zsh-users/zsh-autosuggestions "${HOME}/.local/share/zsh/zsh-autosuggestions"
   git clone https://github.com/zsh-users/zsh-syntax-highlighting "${HOME}/.local/share/zsh/zsh-syntax-highlighting"

@@ -1,10 +1,7 @@
 [tools]
 node = "22"
-java = "21.0.6+7.0.LTS"
-quarkus = "latest"
+java = "21"
 
-"npm:pnpm" = "latest"
-"npm:@antfu/ni" = "latest"
 "npm:local-web-server" = "latest"
 "npm:npm-check-updates" = "latest"
 
