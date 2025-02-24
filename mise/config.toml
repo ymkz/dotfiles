@@ -2,6 +2,7 @@
 node = "22"
 java = "21"
 
+"npm:@antfu/ni" = "latest"
 "npm:local-web-server" = "latest"
 "npm:npm-check-updates" = "latest"
 
