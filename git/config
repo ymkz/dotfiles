@@ -1,6 +1,7 @@
 [user]
   name = ymkz
   email = ymkz@users.noreply.github.com
+
 [init]
   defaultBranch = main
 [core]
@@ -10,32 +11,39 @@
   quotepath = false
   pager = less -FRX
   sshCommand = ssh.exe
-[fetch]
-  prune = true
-[push]
-  default = simple
-  autoSetupRemote = true
-[merge]
-  ff = false
-[pull]
-  ff = only
-  autostash = true
+[column]
+  ui = auto
 [status]
   showUntrackedFiles = all
+[branch]
+  sort = -committerdate
+[tag]
+  sort = version:refname
 [diff]
   algorithm = histogram
+  colorMoved = plain
   renames = true
+  mnemonicPrefix = true
   compactionHeuristic = true
-[grep]
-  lineNumber = true
+[push]
+  default = simple
+  followTags = true
+  autoSetupRemote = true
+[fetch]
+  all = true
+  prune = true
+  pruneTags = true
+[commit]
+  verbose = true
 [rerere]
   enabled = true
-[color]
-  ui = auto
-  status = auto
-  branch = auto
-  grep = auto
-  diff = auto
-  diff-highlight = auto
+  autoupdate = true
+[core]
+  excludesfile = ~/.gitignore
+[rebase]
+  autoSquash = true
+  autoStash = true
+  updateRefs = true
+
 [ghq]
   root = ~/work
