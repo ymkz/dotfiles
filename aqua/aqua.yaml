@@ -20,7 +20,7 @@ packages:
   - name: pnpm/pnpm@v10.4.1
   - name: stateful/runme@v3.12.3
   - name: aquasecurity/trivy@v0.59.1
-  - name: k1LoW/runn@v0.128.2
+  - name: k1LoW/runn@v0.128.3
   - name: k1LoW/tbls@v1.81.0
   # - name: kubernetes/kubectl@v1.32.2
   # - name: kubernetes/minikube@v1.35.0
