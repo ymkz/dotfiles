@@ -23,7 +23,7 @@ packages:
   - name: k1LoW/runn@v0.129.1
   - name: k1LoW/tbls@v1.84.0
   - name: duckdb/duckdb@v1.2.1
-  - name: ymtdzzz/otel-tui@v0.4.7
+  - name: ymtdzzz/otel-tui@v0.4.8
   # - name: kubernetes/kubectl@v1.32.3
   # - name: kubernetes/minikube@v1.35.0
   # - name: ahmetb/kubectx@v0.9.5
