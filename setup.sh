@@ -60,7 +60,7 @@ export PATH="${AQUA_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/aquaproj-aqua
 
 # install aqua (https://aquaproj.github.io/docs/products/aqua-installer)
 if ! type aqua > /dev/null 2>&1; then
-  curl -sSfL https://raw.githubusercontent.com/aquaproj/aqua-installer/v3.1.1/aqua-installer | bash
+  curl -sSfL https://raw.githubusercontent.com/aquaproj/aqua-installer/v3.1.2/aqua-installer | bash
   aqua install --all
 fi
 
