@@ -20,7 +20,7 @@ packages:
   - name: pnpm/pnpm@v10.8.0
   - name: stateful/runme@v3.13.1
   - name: aquasecurity/trivy@v0.61.1
-  - name: k1LoW/runn@v0.129.3
+  - name: k1LoW/runn@v0.129.4
   - name: k1LoW/tbls@v1.84.1
   - name: duckdb/duckdb@v1.2.2
   - name: ymtdzzz/otel-tui@v0.4.8
