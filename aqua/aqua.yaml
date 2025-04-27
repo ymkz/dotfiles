@@ -21,7 +21,7 @@ packages:
   - name: stateful/runme@v3.13.1
   - name: aquasecurity/trivy@v0.61.1
   - name: k1LoW/runn@v0.129.4
-  - name: k1LoW/tbls@v1.85.0
+  - name: k1LoW/tbls@v1.85.1
   - name: duckdb/duckdb@v1.2.2
   - name: ymtdzzz/otel-tui@v0.4.10
   # - name: kubernetes/kubectl@v1.32.3
