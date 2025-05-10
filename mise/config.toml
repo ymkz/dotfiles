@@ -1,6 +1,6 @@
 [tools]
 node = "22"
-java = "21.0.7+6.0.LTS"
+java = "21"
 
 "npm:@antfu/ni" = "latest"
 "npm:npm-check-updates" = "latest"
