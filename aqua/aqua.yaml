@@ -25,7 +25,7 @@ packages:
   - name: k1LoW/tbls@v1.85.2
   - name: duckdb/duckdb@v1.2.2
   - name: ymtdzzz/otel-tui@v0.4.10
-  # - name: kubernetes/kubectl@v1.33.0
+  # - name: kubernetes/kubectl@v1.33.1
   # - name: kubernetes/minikube@v1.35.0
   # - name: ahmetb/kubectx@v0.9.5
   # - name: ahmetb/kubectx/kubens@v0.9.5
