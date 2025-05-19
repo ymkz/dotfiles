@@ -1,6 +1,6 @@
 [tools]
 bun = "1.2.13"
-node = "22.15.0"
+node = "22.15.1"
 java = "temurin-21.0.7+6.0.LTS"
 
 "npm:@antfu/ni" = "latest"
