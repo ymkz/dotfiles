@@ -1,5 +1,5 @@
 [tools]
-bun = "1.2.14"
+bun = "1.2.15"
 node = "22.15.1"
 java = "temurin-21.0.7+6.0.LTS"
 
