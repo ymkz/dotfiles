@@ -16,7 +16,7 @@ packages:
   - name: jqlang/jq@jq-1.8.0
   - name: mikefarah/yq@v4.45.4
   - name: sharkdp/fd@v10.2.0
-  - name: dundee/gdu@v5.30.1
+  - name: dundee/gdu@v5.31.0
   - name: cli/cli@v2.74.1
   - name: pnpm/pnpm@v10.11.1
   - name: astral-sh/uv@0.7.11
