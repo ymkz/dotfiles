@@ -19,7 +19,7 @@ packages:
   - name: dundee/gdu@v5.31.0
   - name: cli/cli@v2.74.1
   - name: pnpm/pnpm@v10.11.1
-  - name: astral-sh/uv@0.7.11
+  - name: astral-sh/uv@0.7.13
   - name: stateful/runme@v3.14.0
   - name: aquasecurity/trivy@v0.63.0
   - name: k1LoW/runn@v0.131.0
