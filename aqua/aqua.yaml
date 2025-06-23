@@ -23,7 +23,7 @@ packages:
   - name: stateful/runme@v3.14.0
   - name: aquasecurity/trivy@v0.63.0
   - name: k1LoW/runn@v0.131.0
-  - name: k1LoW/tbls@v1.85.4
+  - name: k1LoW/tbls@v1.85.5
   - name: duckdb/duckdb@v1.3.1
   # - name: kubernetes/kubectl@v1.33.2
   # - name: kubernetes/minikube@v1.36.0
