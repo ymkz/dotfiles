@@ -41,7 +41,6 @@ if [[ -e "${HOME}/work/github.com/ymkz/dotfiles" ]]; then
   mkdir -p "${HOME}/.config/zsh"
   mkdir -p "${HOME}/.config/mise"
   mkdir -p "${HOME}/.config/atuin"
-  mkdir -p "${HOME}/.config/aquaproj-aqua"
   ln -nfs "${HOME}/work/github.com/ymkz/dotfiles/misc/editorconfig" "${HOME}/.editorconfig"
   ln -nfs "${HOME}/work/github.com/ymkz/dotfiles/node/npmrc" "${HOME}/.npmrc"
   ln -nfs "${HOME}/work/github.com/ymkz/dotfiles/vim/vimrc" "${HOME}/.vimrc"
@@ -52,20 +51,11 @@ if [[ -e "${HOME}/work/github.com/ymkz/dotfiles" ]]; then
   ln -nfs "${HOME}/work/github.com/ymkz/dotfiles/git/ignore" "${HOME}/.config/git/ignore"
   ln -nfs "${HOME}/work/github.com/ymkz/dotfiles/mise/config.toml" "${HOME}/.config/mise/config.toml"
   ln -nfs "${HOME}/work/github.com/ymkz/dotfiles/atuin/config.toml" "${HOME}/.config/atuin/config.toml"
-  ln -nfs "${HOME}/work/github.com/ymkz/dotfiles/aqua/aqua.yaml" "${HOME}/.config/aquaproj-aqua/aqua.yaml"
 fi
 
-export AQUA_GLOBAL_CONFIG=${AQUA_GLOBAL_CONFIG:-}:${XDG_CONFIG_HOME:-$HOME/.config}/aquaproj-aqua/aqua.yaml
-export PATH="${AQUA_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/aquaproj-aqua}/bin:${PATH}"
-
-# install aqua (https://aquaproj.github.io/docs/products/aqua-installer)
-if ! type aqua > /dev/null 2>&1; then
-  curl -sSfL https://raw.githubusercontent.com/aquaproj/aqua-installer/v4.0.0/aqua-installer | bash
-  aqua install --all
-fi
-
-# install runtime by mise
-if type mise > /dev/null 2>&1; then
+# install mise (https://mise.jdx.dev/installing-mise.html)
+if ! type mise > /dev/null 2>&1; then
+  curl https://mise.run | sh
   mise install
 fi
 

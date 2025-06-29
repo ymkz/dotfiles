@@ -48,11 +48,7 @@ export FZF_DEFAULT_OPTS=" \
 --color=marker:#f4dbd6,fg+:#cad3f5,prompt:#c6a0f6,hl+:#ed8796 \
 --height 40% --ansi --cycle --reverse --select-1 --exit-0"
 
-export AQUA_GLOBAL_CONFIG=${AQUA_GLOBAL_CONFIG:-}:${XDG_CONFIG_HOME:-$HOME/.config}/aquaproj-aqua/aqua.yaml
-export AQUA_ROOT_DIR=${XDG_DATA_HOME:-$HOME/.local/share}/aquaproj-aqua
-
 path+=(
-  "${AQUA_ROOT_DIR}/bin"
   "${HOME}/.local/bin"
 )
 
