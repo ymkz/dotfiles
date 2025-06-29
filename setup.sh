@@ -56,7 +56,7 @@ fi
 # install mise (https://mise.jdx.dev/installing-mise.html)
 if ! type mise > /dev/null 2>&1; then
   curl https://mise.run | sh
-  eval "$($HOME/.local/bin/mise activate zsh)"
+  exec $SHELL -l
   mise install
 fi
 
