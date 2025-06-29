@@ -56,7 +56,7 @@ fi
 # install mise (https://mise.jdx.dev/installing-mise.html)
 if ! type mise > /dev/null 2>&1; then
   curl https://mise.run | sh
-  mise install
+  "$HOME/.local/bin/mise" install
 fi
 
 # change default shell
