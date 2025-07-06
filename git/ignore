@@ -1,18 +1,19 @@
 # Backup
-
 _.swp
 _.bak
 \*~
 
 # macOS
-
 .DS_Store
 Thumbs.db
 
 # Node.js
-
-node_modules
+node_modules/
 
 # Project local working space
+.work/
+.local/
 
-.work
+# Claude Code
+**/.claude/settings.local.json
+AI_INSTRUCTIONS.md
