@@ -5,6 +5,7 @@ pnpm = "latest"
 
 "npm:@antfu/ni" = "latest"
 "npm:@anthropic-ai/claude-code" = "latest"
+"npm:@biomejs/biome" = "latest"
 "npm:@google/gemini-cli" = "latest"
 "npm:ccusage" = "latest"
 "npm:npm-check-updates" = "latest"
