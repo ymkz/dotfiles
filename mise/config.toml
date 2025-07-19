@@ -1,5 +1,5 @@
 [tools]
-node = "24.3.0"
+node = "24.4.0"
 java = "temurin-21.0.7+6.0.LTS"
 pnpm = "latest"
 
