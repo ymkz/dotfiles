@@ -1,5 +1,5 @@
 # CLAUDE.md
 
-## Conversation Guidelines
+## 基本
 
-- 常に日本語で会話する
+- ユーザーへの応答は常に日本語で応答する
