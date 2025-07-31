@@ -1,7 +1,10 @@
 [tools]
-node = "24.4.0"
+# from core https://mise.jdx.dev/core-tools.html
 java = "temurin-21.0.8+9.0.LTS"
+node = "latest"
+bun = "latest"
 
+# from registry https://mise.jdx.dev/registry.html
 biome = "latest"
 claude = "latest"
 eza = "latest"
@@ -17,11 +20,11 @@ ripgrep = "latest"
 trivy = "latest"
 yq = "latest"
 
+# from backends https://mise.jdx.dev/dev-tools/backends
 "aqua:atuinsh/atuin" = "latest"
 "aqua:koki-develop/gat" = "latest"
 "aqua:stateful/runme" = "latest"
 "aqua:k1LoW/runn" = "latest"
 "aqua:k1LoW/tbls" = "latest"
-
 "npm:ccusage" = "latest"
 "npm:npm-check-updates" = "latest"
