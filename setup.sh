@@ -65,12 +65,6 @@ if ! type mise > /dev/null 2>&1; then
   mise install
 fi
 
-# install ollama (https://github.com/ollama/ollama/blob/main/docs/linux.md)
-if ! type ollama > /dev/null 2>&1; then
-  curl -fsSL https://ollama.com/install.sh | sh
-  ollama --version
-fi
-
 # change default shell
 if type zsh > /dev/null 2>&1; then
   which zsh | sudo tee -a /etc/shells
