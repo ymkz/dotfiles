@@ -61,7 +61,14 @@ fi
 if ! type mise > /dev/null 2>&1; then
   curl https://mise.run | sh
   eval "$($HOME/.local/bin/mise activate)"
+  mise --version
   mise install
+fi
+
+# install ollama (https://github.com/ollama/ollama/blob/main/docs/linux.md)
+if ! type ollama > /dev/null 2>&1; then
+  curl -fsSL https://ollama.com/install.sh | sh
+  ollama --version
 fi
 
 # change default shell
