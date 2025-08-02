@@ -57,6 +57,12 @@ if [[ -e "${HOME}/work/github.com/ymkz/dotfiles" ]]; then
   ln -nfs "${HOME}/work/github.com/ymkz/dotfiles/claude/commands" "${HOME}/.claude/commands"
 fi
 
+# install rust (https://www.rust-lang.org/ja/tools/install)
+if ! type rustup > /dev/null 2>&1; then
+  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+  rustup --version
+fi
+
 # install mise (https://mise.jdx.dev/installing-mise.html)
 if ! type mise > /dev/null 2>&1; then
   curl https://mise.run | sh
