@@ -2,6 +2,7 @@
 # from core https://mise.jdx.dev/core-tools.html
 java = "temurin-21.0.8+9.0.LTS"
 node = "latest"
+deno = "latest"
 bun = "latest"
 
 # from registry https://mise.jdx.dev/registry.html
