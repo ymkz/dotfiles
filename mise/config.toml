@@ -6,6 +6,7 @@ deno = "latest"
 bun = "latest"
 
 # from registry https://mise.jdx.dev/registry.html
+atuin = "latest"
 biome = "latest"
 eza = "latest"
 fd = "latest"
@@ -17,15 +18,12 @@ jq = "latest"
 ni = "latest"
 pnpm = "latest"
 ripgrep = "latest"
+tbls = "latest"
 trivy = "latest"
 yq = "latest"
 
-# from backends https://mise.jdx.dev/dev-tools/backends
-"aqua:atuinsh/atuin" = "latest"
+# from backends https://mise.jdx.dev/dev-tools/backends/
 "aqua:koki-develop/gat" = "latest"
 "aqua:stateful/runme" = "latest"
 "aqua:k1LoW/runn" = "latest"
-"aqua:k1LoW/tbls" = "latest"
-"npm:@openai/codex" = "latest"
-"npm:difit" = "latest"
 "npm:npm-check-updates" = "latest"
