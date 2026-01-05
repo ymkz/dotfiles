@@ -40,7 +40,6 @@ if [[ -e "${HOME}/work/github.com/ymkz/dotfiles" ]]; then
   mkdir -p "${HOME}/.config/zsh"
   mkdir -p "${HOME}/.config/mise"
   mkdir -p "${HOME}/.config/atuin"
-  mkdir -p "${HOME}/.claude"
   ln -nfs "${HOME}/work/github.com/ymkz/dotfiles/misc/editorconfig" "${HOME}/.editorconfig"
   ln -nfs "${HOME}/work/github.com/ymkz/dotfiles/node/npmrc" "${HOME}/.npmrc"
   ln -nfs "${HOME}/work/github.com/ymkz/dotfiles/vim/vimrc" "${HOME}/.vimrc"
@@ -52,9 +51,6 @@ if [[ -e "${HOME}/work/github.com/ymkz/dotfiles" ]]; then
   ln -nfs "${HOME}/work/github.com/ymkz/dotfiles/mise/config.toml" "${HOME}/.config/mise/config.toml"
   ln -nfs "${HOME}/work/github.com/ymkz/dotfiles/atuin/config.toml" "${HOME}/.config/atuin/config.toml"
   ln -nfs "${HOME}/work/github.com/ymkz/dotfiles/starship/starship.toml" "${HOME}/.config/starship.toml"
-  ln -nfs "${HOME}/work/github.com/ymkz/dotfiles/claude/CLAUDE.md" "${HOME}/.claude/CLAUDE.md"
-  ln -nfs "${HOME}/work/github.com/ymkz/dotfiles/claude/settings.json" "${HOME}/.claude/settings.json"
-  ln -nfs "${HOME}/work/github.com/ymkz/dotfiles/claude/commands" "${HOME}/.claude/commands"
 fi
 
 # install rust (https://www.rust-lang.org/ja/tools/install)

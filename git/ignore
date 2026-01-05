@@ -13,7 +13,3 @@ node_modules/
 # Project local working space
 .work/
 .local/
-
-# Claude Code
-**/.claude/settings.local.json
-AI_INSTRUCTIONS.md
