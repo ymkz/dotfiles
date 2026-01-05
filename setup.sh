@@ -30,7 +30,6 @@ fi
 # fetch zsh plugins
 if [[ ! -e "${HOME}/.local/share/zsh" ]]; then
   mkdir -p "${HOME}/.local/share/zsh"
-  git clone https://github.com/sindresorhus/pure "${HOME}/.local/share/zsh/pure"
   git clone https://github.com/zsh-users/zsh-autosuggestions "${HOME}/.local/share/zsh/zsh-autosuggestions"
   git clone https://github.com/zsh-users/zsh-syntax-highlighting "${HOME}/.local/share/zsh/zsh-syntax-highlighting"
 fi
@@ -52,6 +51,7 @@ if [[ -e "${HOME}/work/github.com/ymkz/dotfiles" ]]; then
   ln -nfs "${HOME}/work/github.com/ymkz/dotfiles/git/ignore" "${HOME}/.config/git/ignore"
   ln -nfs "${HOME}/work/github.com/ymkz/dotfiles/mise/config.toml" "${HOME}/.config/mise/config.toml"
   ln -nfs "${HOME}/work/github.com/ymkz/dotfiles/atuin/config.toml" "${HOME}/.config/atuin/config.toml"
+  ln -nfs "${HOME}/work/github.com/ymkz/dotfiles/starship/starship.toml" "${HOME}/.config/starship.toml"
   ln -nfs "${HOME}/work/github.com/ymkz/dotfiles/claude/CLAUDE.md" "${HOME}/.claude/CLAUDE.md"
   ln -nfs "${HOME}/work/github.com/ymkz/dotfiles/claude/settings.json" "${HOME}/.claude/settings.json"
   ln -nfs "${HOME}/work/github.com/ymkz/dotfiles/claude/commands" "${HOME}/.claude/commands"

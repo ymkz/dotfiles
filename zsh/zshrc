@@ -49,12 +49,9 @@ path+=(
   "${HOME}/.local/bin"
 )
 
-fpath+=(
-  "${XDG_DATA_HOME}/zsh/pure"
-)
-
 typeset -U path PATH
 
+eval "$(starship init zsh)"
 eval "$(mise activate zsh)"
 eval "$(atuin init zsh --disable-up-arrow)"
 
@@ -73,5 +70,3 @@ bindkey '^b' fzf_switch
 autoload -Uz colors; colors
 autoload -Uz compinit; compinit
 autoload -Uz promptinit; promptinit
-
-prompt pure
