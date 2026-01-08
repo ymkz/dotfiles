@@ -51,8 +51,8 @@ path+=(
 
 typeset -U path PATH
 
-eval "$(starship init zsh)"
 eval "$(mise activate zsh)"
+eval "$(starship init zsh)"
 eval "$(atuin init zsh --disable-up-arrow)"
 
 source "${XDG_CONFIG_HOME}/zsh/alias.zsh"
