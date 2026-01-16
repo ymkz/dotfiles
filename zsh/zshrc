@@ -49,6 +49,10 @@ path+=(
   "${HOME}/.local/bin"
 )
 
+fpath+=(
+  "${HOME}/.zsh/completions"
+)
+
 typeset -U path PATH
 
 eval "$(mise activate zsh)"
