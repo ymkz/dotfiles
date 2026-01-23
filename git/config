@@ -47,3 +47,5 @@
 
 [ghq]
   root = ~/work
+[wt]
+  basedir = .worktrees

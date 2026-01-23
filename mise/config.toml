@@ -25,8 +25,7 @@ trivy = "latest"
 yq = "latest"
 
 # from backends https://mise.jdx.dev/dev-tools/backends/
-"aqua:koki-develop/gat" = "latest"
-"aqua:stateful/runme" = "latest"
-"aqua:k1LoW/runn" = "latest"
-"npm:npm-check-updates" = "latest"
-"npm:@fission-ai/openspec" = "latest"
+"github:k1LoW/runn" = "latest"
+"github:k1LoW/git-wt" = "latest"
+"github:koki-develop/gat" = "latest"
+"github:stateful/runme" = "latest"

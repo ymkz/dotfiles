@@ -58,18 +58,13 @@ typeset -U path PATH
 eval "$(mise activate zsh)"
 eval "$(starship init zsh)"
 eval "$(atuin init zsh --disable-up-arrow)"
+eval "$(git wt --init zsh)"
 
 source "${XDG_CONFIG_HOME}/zsh/alias.zsh"
 source "${XDG_CONFIG_HOME}/zsh/function.zsh"
 
 source "${XDG_DATA_HOME}/zsh/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh"
 source "${XDG_DATA_HOME}/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh"
-
-zle -N fzf_ghq
-bindkey '^g' fzf_ghq
-
-zle -N fzf_switch
-bindkey '^b' fzf_switch
 
 autoload -Uz colors; colors
 autoload -Uz compinit; compinit
