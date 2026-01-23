@@ -8,12 +8,8 @@
     "command": "editor.action.rename"
   },
   {
-    "key": "ctrl+h",
-    "command": "workbench.action.toggleSidebarVisibility"
-  },
-  {
-    "key": "ctrl+j",
-    "command": "workbench.action.togglePanel"
+    "key": "ctrl+t",
+    "command": "workbench.action.terminal.toggleTerminal"
   },
   {
     "key": "ctrl+x",
