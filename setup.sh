@@ -51,6 +51,8 @@ if [[ -e "${HOME}/work/github.com/ymkz/dotfiles" ]]; then
   ln -nfs "${HOME}/work/github.com/ymkz/dotfiles/mise/config.toml" "${HOME}/.config/mise/config.toml"
   ln -nfs "${HOME}/work/github.com/ymkz/dotfiles/atuin/config.toml" "${HOME}/.config/atuin/config.toml"
   ln -nfs "${HOME}/work/github.com/ymkz/dotfiles/starship/starship.toml" "${HOME}/.config/starship.toml"
+  ln -nfs "${HOME}/work/github.com/ymkz/dotfiles/opencode/opencode.jsonc" "${HOME}/.config/opencode/opencode.jsonc"
+  ln -nfs "${HOME}/work/github.com/ymkz/dotfiles/opencode/oh-my-opencode-slim.json" "${HOME}/.config/opencode/oh-my-opencode-slim.json"
 fi
 
 # install rust (https://www.rust-lang.org/ja/tools/install)

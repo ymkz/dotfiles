@@ -1,0 +1,95 @@
+{
+  "preset": "zai-coding-plan",
+  "presets": {
+    "opencode-free": {
+      "orchestrator": {
+        "model": "opencode/kimi-k2.5-free",
+        "skills": [
+          "*"
+        ],
+        "mcps": [
+          "websearch"
+        ]
+      },
+      "oracle": {
+        "model": "opencode/kimi-k2.5-free",
+        "variant": "high",
+        "skills": [],
+        "mcps": []
+      },
+      "librarian": {
+        "model": "opencode/glm-4.7-free",
+        "variant": "low",
+        "skills": [],
+        "mcps": [
+          "websearch",
+          "context7",
+          "grep_app"
+        ]
+      },
+      "explorer": {
+        "model": "opencode/glm-4.7-free",
+        "variant": "low",
+        "skills": [],
+        "mcps": []
+      },
+      "designer": {
+        "model": "opencode/trinity-large-preview-free",
+        "variant": "medium",
+        "skills": [
+          "agent-browser"
+        ],
+        "mcps": []
+      },
+      "fixer": {
+        "model": "opencode/glm-4.7-free",
+        "variant": "low",
+        "skills": [],
+        "mcps": []
+      }
+    },
+    "zai-coding-plan": {
+      "orchestrator": {
+        "model": "zai-coding-plan/glm-4.7",
+        "skills": ["*"],
+        "mcps": ["websearch"]
+      },
+      "oracle": {
+        "model": "zai-coding-plan/glm-4.7",
+        "variant": "high",
+        "skills": [],
+        "mcps": []
+      },
+      "librarian": {
+        "model": "zai-coding-plan/glm-4.7-flash",
+        "variant": "low",
+        "skills": [],
+        "mcps": [
+          "websearch",
+          "context7",
+          "grep_app"
+        ]
+      },
+      "explorer": {
+        "model": "zai-coding-plan/glm-4.7-flash",
+        "variant": "low",
+        "skills": [],
+        "mcps": []
+      },
+      "designer": {
+        "model": "zai-coding-plan/glm-4.7",
+        "variant": "medium",
+        "skills": [
+          "agent-browser"
+        ],
+        "mcps": []
+      },
+      "fixer": {
+        "model": "zai-coding-plan/glm-4.7",
+        "variant": "zai-coding-plan/glm-4.7-flash",
+        "skills": [],
+        "mcps": []
+      }
+    }
+  }
+}
