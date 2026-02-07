@@ -1,8 +1,16 @@
 {
   "$schema": "https://opencode.ai/config.json",
+  "theme": "kanagawa",
   "plugin": ["oh-my-opencode@latest"],
   "agent": {
     "explore": { "disable": true },
     "general": { "disable": true }
+  },
+  "mcp": {
+    "deepwiki": {
+      "type": "remote",
+      "url": "https://mcp.deepwiki.com/mcp",
+      "enabled": true
+    }
   }
 }
