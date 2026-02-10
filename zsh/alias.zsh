@@ -6,12 +6,7 @@ alias deps="cat package.json | jq -r '.dependencies | keys[]' | tr '\n' ' '"
 alias devdeps="cat package.json | jq -r '.devDependencies | keys[]' | tr '\n' ' '"
 
 if type gat > /dev/null; then
-  alias cat="gat --theme catppuccin-frappe"
-fi
-
-if type minikube > /dev/null; then
-  alias kubectl="minikube kubectl --"
-  alias k="minikube kubectl --"
+  alias cat="gat"
 fi
 
 if type npm > /dev/null; then
@@ -49,6 +44,7 @@ if type git > /dev/null; then
   alias gb="git branch"
   alias gbl="git branch -a -vv"
   alias ga="git add"
+  alias ga.="git add ."
   alias gd="git diff"
   alias gdc="git diff --cached"
   alias gdw="git diff --color-words"
