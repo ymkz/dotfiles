@@ -4,54 +4,30 @@
   "actions": [],
   "copyFormatting": "none",
   "copyOnSelect": false,
-  "defaultProfile": "{2165e6c1-07ea-55ea-b719-603a3f9fc976}",
+  "defaultProfile": "{927cc777-747e-5a06-97b0-ea71b3e7e4b0}",
   "disableAnimations": true,
   "initialCols": 180,
   "initialRows": 60,
   "keybindings": [
-    {
-      "id": "Terminal.PasteFromClipboard",
-      "keys": "ctrl+v"
-    },
     {
       "id": "Terminal.FindText",
       "keys": "ctrl+shift+f"
     },
     {
       "id": "Terminal.SplitPaneRight",
-      "keys": "alt+d"
+      "keys": "ctrl+shift+d"
     },
     {
       "id": "Terminal.ClosePane",
-      "keys": "alt+w"
-    },
-    {
-      "id": "Terminal.CopyToClipboard",
-      "keys": "ctrl+c"
+      "keys": "ctrl+shift+w"
     },
     {
       "id": "Terminal.OpenNewTab",
-      "keys": "alt+t"
-    },
-    {
-      "id": "Terminal.SwitchToTab0",
-      "keys": "alt+1"
-    },
-    {
-      "id": "Terminal.SwitchToTab1",
-      "keys": "alt+2"
-    },
-    {
-      "id": "Terminal.SwitchToTab2",
-      "keys": "alt+3"
-    },
-    {
-      "id": "Terminal.SwitchToTab3",
-      "keys": "alt+4"
+      "keys": "ctrl+shift+t"
     }
   ],
   "launchMode": "maximized",
-  "multiLinePasteWarning": false,
+  "warning.multiLinePaste": false,
   "newTabMenu": [
     {
       "type": "remainingProfiles"
@@ -59,45 +35,20 @@
   ],
   "profiles": {
     "defaults": {
-      "colorScheme": "Kanagawa",
+      "colorScheme": "One Half Dark",
       "font": {
         "face": "UDEV Gothic NF",
-        "size": 18
+        "size": 16
       }
     },
     "list": [
       {
-        "guid": "{2165e6c1-07ea-55ea-b719-603a3f9fc976}",
+        "guid": "{927cc777-747e-5a06-97b0-ea71b3e7e4b0}",
         "hidden": false,
         "name": "Ubuntu",
         "source": "Microsoft.WSL"
       }
     ]
   },
-  "schemes": [
-    {
-      "name": "Kanagawa",
-      "black": "#1F1F28",
-      "red": "#E82424",
-      "green": "#76946A",
-      "yellow": "#FF9E3B",
-      "blue": "#658594",
-      "purple": "#957FB8",
-      "cyan": "#9CABCA",
-      "white": "#DCD7BA",
-      "brightBlack": "#2A2A37",
-      "brightRed": "#FF5D62",
-      "brightGreen": "#98BB6C",
-      "brightYellow": "#E6C384",
-      "brightBlue": "#7FB4CA",
-      "brightPurple": "#D27E99",
-      "brightCyan": "#A3D4D5",
-      "brightWhite": "#DCD7BA",
-      "background": "#1F1F28",
-      "foreground": "#DCD7BA",
-      "selectionBackground": "#2A2A37",
-      "cursorColor": "#DCD7BA"
-    }
-  ],
   "themes": []
 }

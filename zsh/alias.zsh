@@ -5,6 +5,10 @@ alias cds="cd ~/sandbox"
 alias deps="cat package.json | jq -r '.dependencies | keys[]' | tr '\n' ' '"
 alias devdeps="cat package.json | jq -r '.devDependencies | keys[]' | tr '\n' ' '"
 
+if type claude > /dev/null; then
+  alias claude="ANTHROPIC_BASE_URL="https://api.z.ai/api/anthropic" claude --dangerously-skip-permissions"
+fi
+
 if type gat > /dev/null; then
   alias cat="gat"
 fi

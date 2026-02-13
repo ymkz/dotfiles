@@ -69,6 +69,12 @@ if ! type mise > /dev/null 2>&1; then
   mise install
 fi
 
+# install claude code (https://code.claude.com/docs/ja/overview)
+if ! type claude > /dev/null 2>&1; then
+  curl -fsSL https://claude.ai/install.sh | bash
+  claude --version
+fi
+
 # change default shell
 if type zsh > /dev/null 2>&1; then
   which zsh | sudo tee -a /etc/shells

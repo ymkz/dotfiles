@@ -2,15 +2,25 @@
   "$schema": "https://opencode.ai/config.json",
   "theme": "kanagawa",
   "plugin": ["oh-my-opencode@latest"],
-  "agent": {
-    "explore": { "disable": true },
-    "general": { "disable": true }
+  "permission": {
+    "read": true,
+    "edit": true,
+    "glob": true,
+    "grep": true,
+    "list": true,
+    "bash": true,
+    "task": true,
+    "skill": true,
+    "lsp": true,
+    "todoread": true,
+    "todowrite": true,
+    "external_directory": true
   },
   "mcp": {
     "deepwiki": {
+      "enabled": true,
       "type": "remote",
-      "url": "https://mcp.deepwiki.com/mcp",
-      "enabled": true
+      "url": "https://mcp.deepwiki.com/mcp"
     }
   }
 }
