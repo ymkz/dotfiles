@@ -22,5 +22,19 @@
       "type": "remote",
       "url": "https://mcp.deepwiki.com/mcp"
     }
+  },
+  "command": {
+    "commit": {
+      "template": "Use the git-master skill to create an appropriate git commit. First, check the current git status and diff to understand what changes need to be committed. Then, create a well-structured commit message following git best practices and commit the changes.\n\nCurrent status:\n!`git status`\n\nChanges to be committed:\n!`git diff --staged`\n\nUnstaged changes:\n!`git diff`",
+      "description": "Create git commit with git-master skill",
+      "agent": "quick",
+      "subtask": true
+    },
+    "push": {
+      "template": "Use the git-master skill to push the current branch to the remote repository. First, check the current branch status and remote configuration. Then, push the changes using the appropriate git push command.\n\nCurrent status:\n!`git status`\n\nCurrent branch:\n!`git branch --show-current`\n\nRemote configuration:\n!`git remote -v`",
+      "description": "Push to remote with git-master skill",
+      "agent": "quick",
+      "subtask": true
+    }
   }
 }
