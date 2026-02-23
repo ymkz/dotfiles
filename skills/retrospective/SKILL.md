@@ -8,81 +8,76 @@ description: Conduct agile retrospectives using KPT method. Analyze work logs, e
 あなたは開発チームのプロセス改善を担うアジャイルコーチです。
 直近の作業ログ、エラー履歴、およびユーザーとの会話文脈を分析し、レトロスペクティブ（KPT法）を実行してください。
 
-## When to Use This Skill
+## 使用タイミング
 
-Use this skill when:
-- Completing complex or multi-step development tasks
-- Encountering errors that required multiple fix attempts
-- Finishing a significant feature or implementation
-- Need to capture lessons learned for future reference
-- Identifying patterns in recurring issues
-- Reviewing agent behavior and decision-making processes
-
-## Instructions
+このスキルは以下の場合に使用します：
+ 複雑またはマルチステップの開発タスク完了時
+ 複数回の修正が必要なエラー遭遇時
+ 重要な機能または実装の完了時
+ 今後の参照のための教訓を記録する必要がある時
+ 再発する問題のパターンを特定する時
+ エージェントの行動と意思決定プロセスをレビューする時
+## 手順
 
 以下のステップで振り返りを行い、エージェントのメモリ（今後の行動指針）をアップデートしてください。
 
-### 1. **Keep (良かったこと)**
+### 1. **Keep（継続）**
 
 今回の作業で効率的だったアプローチや、正解だった技術的選択を抽出します。
 
-**Examples:**
+**例**：
 - 並列エージェント実行で探索時間を短縮
 - LSP診断を使用した型安全の確保
 - 既存パターンに従った実装による一貫性の維持
 
-### 2. **Problem (課題・反省点)**
+### 2. **Problem（課題）**
 
 エラーが起きた根本原因、非効率だった手順、コンテキストの認識ズレを分析します。
 
-**Examples:**
+**例**：
 - ユーザーの意図を誤解釈して実装を開始
 - 既存コードベースのパターンを確認せずに推測で実装
 - エラー対処でのショットガンデバッグ（ランダム変更）
 
-### 3. **Try (改善策)**
+### 3. **Try（改善策）**
 
 Problemを解決するための具体的なアクションプランを提案します。
 
-**Examples:**
+**例**：
 - 実装前にExploreエージェントでコードベース調査
 - あいまいな要求の場合、推測せずに質問を明確化
 - エラー対処はOracleに相談してから根本原因の修正
 
-### 4. **Memory & Skill Update (最重要)**
+### 4. **Memory & Skill Update（最重要）**
 
 今後の作業に適用すべき具体的なルールや知識を抽出します。
 
-**Examples:**
+**例**：
 - **TypeScriptルール**: 特定の型定義アンチパターンを避ける
 - **アーキテクチャ**: クリーンアーキテクチャの依存関係を明確化
 - **ライブラリ知識**: 特定ライブラリの最新の挙動やベストプラクティス
 - **プロセス**: マルチステップタスクでは必ずTodoを作成
 - **対処**: 3回連続で失敗したらOracleに相談
 
-## Output Format
+## 出力形式
 
 結果は簡潔なMarkdownで出力し、最後に「次回以降のプロンプトや指示書に追記すべきルール（Memory Update）」をコードブロックで提示してください。
 
-### Template
+### テンプレート
 
 ```markdown
-# Retrospective: [Task/Context]
+# レトロスペクティブ: [タスク/コンテキスト]
 
-## Keep
+## Keep（継続）
 - [具体的な良い点1]
 - [具体的な良い点2]
-
-## Problem
+## Problem（課題）
 - [課題1とその原因]
 - [課題2とその原因]
-
-## Try
+## Try（改善策）
 - [改善策1: 具体的なアクション]
 - [改善策2: 具体的なアクション]
-
-## Memory Update
-
+## Memory Update（記憶の更新）
 ```text
 [次回以降適用すべき具体的なルールや知見]
 - 技術的ルール
@@ -91,40 +86,40 @@ Problemを解決するための具体的なアクションプランを提案し�
 ```
 ```
 
-## Key Principles
+## 重要原則
 
-1. **Specific over General**: 具体的な例を挙げる（「良かった」ではなく「〜なアプローチが効率的だった」）
-2. **Actionable Try**: 抽象的な改善ではなく、次回すぐに実行可能なアクションプラン
-3. **Reusable Memory**: 再利用可能な知識とルールを抽出し、形式化して記録
-4. **Root Cause Analysis**: Problemでは症状だけでなく根本原因を特定
+1. **具体的表現**: 具体的な例を挙げる（「良かった」ではなく「〜なアプローチが効率的だった」）
+2. **実行可能なTry**: 抽象的な改善ではなく、次回すぐに実行可能なアクションプラン
+3. **再利用可能なMemory**: 再利用可能な知識とルールを抽出し、形式化して記録
+4. **根本原因分析**: Problemでは症状だけでなく根本原因を特定
 
-## Example Memory Update
+## Memory Updateの例
 
 ```text
-## Rules for Future Tasks
+## 今後のタスクのためのルール
 
-### Multi-step Tasks
-- MUST create todos before starting any task with 2+ steps
-- Mark in_progress before starting each todo item
-- Mark completed immediately after finishing (NEVER batch)
+### マルチステップタスク
+ 2ステップ以上のタスクでは必ず開始前にTodoを作成
+ 各Todoアイテムを開始する前にin_progressをマーク
+ 完了後はすぐにcompletedをマーク（バッチ処理は禁止）
 
-### Error Handling
-- After 3 consecutive fix attempts: STOP, REVERT, CONSULT Oracle
-- NEVER suppress type errors with `as any` or `@ts-ignore`
-- Always verify with lsp_diagnostics after edits
+### エラーハンドリング
+ 3回連続で修正に失敗した場合: 停止、復元、Oracleに相談
+ `as any`や`@ts-ignore`で型エラーを抑制しない
+ 編集後は常にlsp_diagnosticsで検証
 
-### Context Gathering
-- For unfamiliar libraries: Fire librarian agent immediately
-- For codebase patterns: Fire explore agent (run_in_background=true)
-- ALWAYS parallelize independent reads and searches
+### コンテキスト収集
+ 不慣れなライブラリの場合: 直ちにlibrarianエージェントを起動
+ コードベースのパターンの場合: exploreエージェントを起動（run_in_background=true）
+ 常に独立した読み取りと検索を並列化
 
-### Codebase Patterns
-- Follow existing patterns strictly if codebase is disciplined
-- Propose approach first if codebase is chaotic
-- Sample 2-3 similar files to verify patterns before assuming
+### コードベースパターン
+ コードベースが規律正しい場合: 既存パターンを厳密に従う
+ コードベースがカオスな場合: まずアプローチを提案
+ パターンを仮定する前に、類似ファイル2-3個をサンプリングして確認
 ```
 
-## Integration with Workflow
+## ワークフローへの統合
 
 このスキルは以下のタイミングで使用します：
 
@@ -133,4 +128,4 @@ Problemを解決するための具体的なアクションプランを提案し�
 3. **セッション終了時**: 長い対話セッションのまとめとして
 4. **反復パターン発見時**: 同じ問題が繰り返し発生した場合
 
-Remember: レトロスペクティブの価値は、分析自体ではなく、**次回の行動が改善されること**にあります。Memory Updateは実用的で、即座に適用可能な形式で記録してください。
+覚えておいてください: レトロスペクティブの価値は、分析自体ではなく、**次回の行動が改善されること**にあります。Memory Updateは実用的で、即座に適用可能な形式で記録してください。
