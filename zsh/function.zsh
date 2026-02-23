@@ -1,4 +1,4 @@
-function repo() {
+function g() {
   local root
   local repository
 
@@ -6,18 +6,11 @@ function repo() {
   repository=$(ghq list | fzf +m --query="$LBUFFER" --prompt="repository > ")
 
   if [[ -n "$repository" ]]; then
-    BUFFER="cd ${ghq_root}/${repository}"
-    zle accept-line
+    cd "${ghq_root}/${repository}"
   fi
-
-  zle reset-prompt
 }
 
-
-zle -N repo
-bindkey '^g' repo
-
-function br() {
+function b() {
   local branch
   local current_branch
 
@@ -30,19 +23,6 @@ function br() {
     | fzf +m --query="$LBUFFER" --prompt="branch > ")
 
   if [[ -n "$branch" ]]; then
-    BUFFER="git switch '${branch}'"
-    zle accept-line
+    git switch "${branch}"
   fi
-
-  zle reset-prompt
 }
-
-zle -N br
-bindkey '^b' br
-
-function wt() {
-  git wt "$(git wt | tail -n +2 | fzf | awk '{print $(NF-1)}')"
-}
-
-zle -N wt
-bindkey '^t' wt
