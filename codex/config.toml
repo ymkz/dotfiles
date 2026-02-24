@@ -1,0 +1,15 @@
+[mcp_servers.deepwiki]
+enabled = true
+url = "https://mcp.deepwiki.com/mcp"
+
+[mcp_servers.context7]
+enabled = true
+url = "https://mcp.context7.com/mcp"
+
+[mcp_servers.websearch]
+enabled = true
+url = "https://mcp.exa.ai/mcp"
+
+[mcp_servers.grepapp]
+enabled = true
+url = "https://mcp.grep.app"
