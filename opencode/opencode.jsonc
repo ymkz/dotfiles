@@ -1,6 +1,5 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "theme": "kanagawa",
   "model": "zai-coding-plan/glm-4.7",
   "small_model": "zai-coding-plan/glm-4.7-flash",
   "plugin": ["oh-my-opencode@latest"],
@@ -17,12 +16,5 @@
     "todoread": "allow",
     "todowrite": "allow",
     "external_directory": "allow"
-  },
-  "mcp": {
-    "deepwiki": {
-      "enabled": true,
-      "type": "remote",
-      "url": "https://mcp.deepwiki.com/mcp"
-    }
   }
 }

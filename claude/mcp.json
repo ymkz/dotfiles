@@ -11,10 +11,6 @@
     "websearch": {
       "type": "sse",
       "url": "https://mcp.exa.ai/mcp"
-    },
-    "deepwiki": {
-      "type": "sse",
-      "url": "https://mcp.deepwiki.com/mcp"
     }
   }
 }
