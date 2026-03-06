@@ -1,17 +1,20 @@
 {
   "$schema": "https://raw.githubusercontent.com/code-yeongyu/oh-my-opencode/master/assets/oh-my-opencode.schema.json",
   "agents": {
-    "sisyphus": { "model": "zai-coding-plan/glm-4.7" },
-    "librarian": { "model": "zai-coding-plan/glm-4.7" },
-    "explore":   { "model": "zai-coding-plan/glm-4.7-flash" },
-    "oracle": { "model": "zai-coding-plan/glm-4.7", "variant": "high" },
-    "prometheus": { "model": "zai-coding-plan/glm-4.7" }
+    "sisyphus": { "model": "opencode-go/kimi-k2.5", "variant": "xhigh" },
+    "prometheus": { "model": "opencode-go/kimi-k2.5", "variant": "xhigh" },
+    "atlas": { "model": "opencode-go/kimi-k2.5", "variant": "high" },
+    "oracle": { "model": "opencode-go/glm-5", "variant": "max" },
+    "librarian": { "model": "opencode-go/minimax-m2.5", "variant": "low" },
+    "explore": { "model": "opencode-go/minimax-m2.5", "variant": "low" },
+    "hephaestus": { "model": "opencode-go/minimax-m2.5", "variant": "high" },
+    "sisyphus-junior": { "model": "opencode-go/minimax-m2.5", "variant": "normal" }
   },
   "categories": {
-    "quick": { "model": "opencode/gpt-5-nano" },
-    "unspecified-low": { "model": "zai-coding-plan/glm-4.7-flash" },
-    "unspecified-high": { "model": "zai-coding-plan/glm-4.7", "variant": "max" },
-    "writing": { "model": "zai-coding-plan/glm-4.7-flash" },
-    "visual-engineering": { "model": "zai-coding-plan/glm-4.7", "variant": "high" }
+    "quick": { "model": "opencode-go/minimax-m2.5", "variant": "low" },
+    "unspecified-low": { "model": "opencode-go/minimax-m2.5", "variant": "low" },
+    "unspecified-high": { "model": "opencode-go/glm-5", "variant": "xhigh" },
+    "writing": { "model": "opencode-go/kimi-k2.5", "variant": "normal" },
+    "visual-engineering": { "model": "opencode-go/glm-5", "variant": "high" }
   }
 }
