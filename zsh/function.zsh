@@ -28,6 +28,6 @@ function b() {
 }
 
 function gaic() {
-  COMMIT_MSG=$(pi --model zai/glm-4.7 --print 'Generate ONLY a one-line Git commit message, using imperative mood, summarizing what was changed and why, based strictly on the contents of `git diff --cached`. DO NOT add an explanation or a body. Output ONLY the commit summary line.')
+  COMMIT_MSG=$(pi --print 'Generate ONLY a one-line Git commit message, using imperative mood, summarizing what was changed and why, based strictly on the contents of `git diff --cached`. DO NOT add an explanation or a body. Output ONLY the commit summary line.')
   git commit -m "$COMMIT_MSG" -e
 }
