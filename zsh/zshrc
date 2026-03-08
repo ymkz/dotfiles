@@ -91,26 +91,6 @@ alias lt="eza --tree --level 1"
 alias ll="eza -Hlo --no-user --sort=type --time-style=long-iso"
 alias lla="eza -HAlo --no-user --sort=type --time-style=long-iso"
 
-# alias gpl="git pull"
-# alias gps="git push"
-# alias gs="git status --short --branch"
-# alias gl="git log -n 10 --date=short --pretty=format:'%C(yellow)%h %C(green)%cd %C(blue)%cn %C(reset)%s'"
-# alias gll="git log --date=short --pretty=format:'%C(yellow)%h %C(green)%cd %C(blue)%cn %C(reset)%s'"
-# alias gb="git branch"
-# alias gbl="git branch -a -vv"
-# alias ga="git add"
-# alias ga.="git add ."
-# alias gd="git diff"
-# alias gdc="git diff --cached"
-# alias gdw="git diff --color-words"
-# alias gds="git diff --color-words --word-diff-regex='\\\w+|[^[:space:]]'"
-# alias gnew="git switch --create"
-# alias grs="git restore"
-# alias gun="git reset HEAD"
-# alias gcm="git commit --message"
-# alias gini="git commit --allow-empty -m 'chore: initial empty commit'"
-# alias gg="git fetch --all --prune; git branch -vv | awk '/: gone]/{print \$1}' | xargs git branch -D"
-
 # function b() {
 #   local branch
 #   local current_branch

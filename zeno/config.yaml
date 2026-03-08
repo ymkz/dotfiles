@@ -4,22 +4,64 @@ snippets:
     snippet: git status --short --branch
   - name: git switch
     keyword: gsw
-    snippet: git switch {{message}}
+    snippet: git switch {{branch}}
   - name: git create new branch and switch
     keyword: gnew
-    snippet: git switch --create
+    snippet: git switch --create {{branch}}
   - name: git add
     keyword: ga
-    snippet: git add {{.}}
+    snippet: git add {{files}}
+  - name: git commit message
+    keyword: gcim
+    snippet: git commit -m '{{commit_message}}'
   - name: git commit amend
     keyword: gam
     snippet: git commit --amend -C HEAD
   - name: git commit fix
     keyword: gcf
-    snippet: git commit --amend -m {{.}}
+    snippet: git commit --amend -m '{{commit_message}}'
   - name: git push
-    keyword: gp
-    snippet: git push origin HEAD
+    keyword: gps
+    snippet: git push
+  - name: git pull
+    keyword: gpl
+    snippet: git pull
+  - name: git log recent
+    keyword: gl
+    snippet: "git log -n 10 --date=short --pretty=format:'%C(yellow)%h %C(green)%cd %C(blue)%cn %C(reset)%s'"
+  - name: git log all
+    keyword: gll
+    snippet: "git log --date=short --pretty=format:'%C(yellow)%h %C(green)%cd %C(blue)%cn %C(reset)%s'"
+  - name: git branch
+    keyword: gb
+    snippet: git branch
+  - name: git branch verbose
+    keyword: gbl
+    snippet: git branch -a -vv
+  - name: git diff
+    keyword: gd
+    snippet: git diff
+  - name: git diff cached
+    keyword: gdc
+    snippet: git diff --cached
+  - name: git diff color words
+    keyword: gdw
+    snippet: git diff --color-words
+  - name: git diff color words regex
+    keyword: gds
+    snippet: "git diff --color-words --word-diff-regex='\\w+|[^[:space:]]'"
+  - name: git restore
+    keyword: grs
+    snippet: git restore
+  - name: git unstage
+    keyword: gun
+    snippet: git reset HEAD
+  - name: git initial empty commit
+    keyword: gini
+    snippet: "git init && git commit --allow-empty -m 'chore: initial empty commit'"
+  - name: git prune gone branches
+    keyword: gg
+    snippet: 'git fetch --all --prune; git branch -vv | awk ''/: gone]/{print $1}'' | xargs git branch -D'
   - name: npm global packages
     keyword: ngp
     snippet: npm ls --location=global --depth=0
