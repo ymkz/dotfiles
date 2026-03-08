@@ -1,0 +1,40 @@
+snippets:
+  - name: git status
+    keyword: gs
+    snippet: git status --short --branch
+  - name: git switch
+    keyword: gsw
+    snippet: git switch {{message}}
+  - name: git create new branch and switch
+    keyword: gnew
+    snippet: git switch --create
+  - name: git add
+    keyword: ga
+    snippet: git add {{.}}
+  - name: git commit amend
+    keyword: gam
+    snippet: git commit --amend -C HEAD
+  - name: git commit fix
+    keyword: gcf
+    snippet: git commit --amend -m {{.}}
+  - name: git push
+    keyword: gp
+    snippet: git push origin HEAD
+  - name: npm global packages
+    keyword: ngp
+    snippet: npm ls --location=global --depth=0
+  - name: npm project dependencies
+    keyword: deps
+    snippet: cat package.json | jq -r '.dependencies | keys[]' | tr '\n' ' '
+  - name: npm project devDependencies
+    keyword: devdeps
+    snippet: cat package.json | jq -r '.devDependencies | keys[]' | tr '\n' ' '
+completions:
+  - name: git branch search
+    patterns:
+      - "^git switch $"
+      - "^git checkout $"
+      - "^git branch -[dD] $"
+    sourceCommand: "git branch --all --format='%(refname:short)' | grep -v 'HEAD'"
+    options:
+      --prompt: "Branch> "

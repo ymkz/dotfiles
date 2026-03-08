@@ -1,18 +1,24 @@
 #!/usr/bin/env bash
 
-set -eu
+set -euo pipefail
+
+XDG_CONFIG_HOME=${XDG_CONFIG_HOME:="${HOME}/.config"}
+XDG_CACHE_HOME=${XDG_CACHE_HOME:="${HOME}/.cache"}
+XDG_DATA_HOME=${XDG_DATA_HOME:="${HOME}/.local/share"}
+XDG_STATE_HOME=${XDG_STATE_HOME:="${HOME}/.local/state"}
+DOTFILES_DIR=${DOTFILES_DIR:="${HOME}/work/github.com/ymkz/dotfiles"}
 
 # setup dir
-mkdir -p "${HOME}/.config"
-mkdir -p "${HOME}/.cache"
-mkdir -p "${HOME}/.local/share"
-mkdir -p "${HOME}/.local/bin"
+mkdir -p "${XDG_CONFIG_HOME}"
+mkdir -p "${XDG_CACHE_HOME}"
+mkdir -p "${XDG_DATA_HOME}"
+mkdir -p "${XDG_STATE_HOME}"
 mkdir -p "${HOME}/work"
 mkdir -p "${HOME}/sandbox"
 
 # fetch dotfiles
-if [[ ! -e "${HOME}/work/github.com/ymkz/dotfiles" ]]; then
-  git clone https://github.com/ymkz/dotfiles.git "${HOME}/work/github.com/ymkz/dotfiles"
+if [[ ! -e "${DOTFILES_DIR}" ]]; then
+  git clone https://github.com/ymkz/dotfiles.git "${DOTFILES_DIR}"
 fi
 
 # setup linux on wsl
@@ -22,8 +28,8 @@ if [[ "${OSTYPE}" == linux* ]]; then
   sudo apt upgrade -y
   sudo apt install -y build-essential language-pack-ja procps curl wget git zip unzip zsh sqlite3
   sudo unlink /etc/resolv.conf
-  sudo cp "${HOME}/work/github.com/ymkz/dotfiles/wsl/wsl.conf" "/etc/wsl.conf"
-  sudo cp "${HOME}/work/github.com/ymkz/dotfiles/wsl/resolv.conf" "/etc/resolv.conf"
+  sudo cp "${DOTFILES_DIR}/wsl/wsl.conf" "/etc/wsl.conf"
+  sudo cp "${DOTFILES_DIR}/wsl/resolv.conf" "/etc/resolv.conf"
   sudo chattr +i /etc/resolv.conf
 fi
 
@@ -31,28 +37,32 @@ fi
 if [[ ! -e "${HOME}/.local/share/zsh" ]]; then
   mkdir -p "${HOME}/.local/share/zsh"
   git clone https://github.com/zsh-users/zsh-autosuggestions "${HOME}/.local/share/zsh/zsh-autosuggestions"
-  git clone https://github.com/zsh-users/zsh-syntax-highlighting "${HOME}/.local/share/zsh/zsh-syntax-highlighting"
+  git clone https://github.com/zdharma-continuum/fast-syntax-highlighting "${HOME}/.local/share/zsh/fast-syntax-highlighting"
+  git clone https://github.com/yuki-yano/zeno.zsh "${HOME}/.local/share/zsh/zeno"
 fi
 
 # deploy dotfiles
-if [[ -e "${HOME}/work/github.com/ymkz/dotfiles" ]]; then
-  mkdir -p "${HOME}/.config/git"
-  mkdir -p "${HOME}/.config/zsh"
-  mkdir -p "${HOME}/.config/mise"
-  mkdir -p "${HOME}/.config/atuin"
-  ln -nfs "${HOME}/work/github.com/ymkz/dotfiles/misc/editorconfig" "${HOME}/.editorconfig"
-  ln -nfs "${HOME}/work/github.com/ymkz/dotfiles/node/npmrc" "${HOME}/.npmrc"
-  ln -nfs "${HOME}/work/github.com/ymkz/dotfiles/vim/vimrc" "${HOME}/.vimrc"
-  ln -nfs "${HOME}/work/github.com/ymkz/dotfiles/zsh/zshrc" "${HOME}/.zshrc"
-  ln -nfs "${HOME}/work/github.com/ymkz/dotfiles/zsh/alias.zsh" "${HOME}/.config/zsh/alias.zsh"
-  ln -nfs "${HOME}/work/github.com/ymkz/dotfiles/zsh/function.zsh" "${HOME}/.config/zsh/function.zsh"
-  ln -nfs "${HOME}/work/github.com/ymkz/dotfiles/git/config" "${HOME}/.config/git/config"
-  ln -nfs "${HOME}/work/github.com/ymkz/dotfiles/git/ignore" "${HOME}/.config/git/ignore"
-  ln -nfs "${HOME}/work/github.com/ymkz/dotfiles/mise/config.toml" "${HOME}/.config/mise/config.toml"
-  ln -nfs "${HOME}/work/github.com/ymkz/dotfiles/atuin/config.toml" "${HOME}/.config/atuin/config.toml"
-  ln -nfs "${HOME}/work/github.com/ymkz/dotfiles/starship/starship.toml" "${HOME}/.config/starship.toml"
-  ln -nfs "${HOME}/work/github.com/ymkz/dotfiles/opencode/opencode.jsonc" "${HOME}/.config/opencode/opencode.jsonc"
-  ln -nfs "${HOME}/work/github.com/ymkz/dotfiles/opencode/oh-my-opencode.jsonc" "${HOME}/.config/opencode/oh-my-opencode.jsonc"
+if [[ -e "${DOTFILES_DIR}" ]]; then
+  ln -nfs "${DOTFILES_DIR}/misc/editorconfig" "${HOME}/.editorconfig"
+  ln -nfs "${DOTFILES_DIR}/zsh/zshrc" "${HOME}/.zshrc"
+  ln -nfs "${DOTFILES_DIR}/vim/vimrc" "${HOME}/.vimrc"
+  ln -nfs "${DOTFILES_DIR}/node/npmrc" "${HOME}/.npmrc"
+
+  ln -nfs "${DOTFILES_DIR}/starship/starship.toml" "${XDG_CONFIG_HOME}/starship.toml"
+
+  mkdir -p "${XDG_CONFIG_HOME}/zeno"
+  ln -nfs "${DOTFILES_DIR}/zeno/config.yaml" "${XDG_CONFIG_HOME}/zeno/config.yaml"
+
+  mkdir -p "${XDG_CONFIG_HOME}/git"
+  ln -nfs "${DOTFILES_DIR}/git/config" "${XDG_CONFIG_HOME}/git/config"
+  ln -nfs "${DOTFILES_DIR}/git/ignore" "${XDG_CONFIG_HOME}/git/ignore"
+
+  mkdir -p "${XDG_CONFIG_HOME}/mise"
+  ln -nfs "${DOTFILES_DIR}/mise/config.toml" "${XDG_CONFIG_HOME}/mise/config.toml"
+
+  mkdir -p "${XDG_CONFIG_HOME}/opencode"
+  ln -nfs "${DOTFILES_DIR}/opencode/opencode.jsonc" "${XDG_CONFIG_HOME}/opencode/opencode.jsonc"
+  ln -nfs "${DOTFILES_DIR}/opencode/oh-my-opencode.jsonc" "${XDG_CONFIG_HOME}/opencode/oh-my-opencode.jsonc"
 fi
 
 # install rust (https://www.rust-lang.org/ja/tools/install)
@@ -67,12 +77,6 @@ if ! type mise > /dev/null 2>&1; then
   eval "$($HOME/.local/bin/mise activate)"
   mise --version
   mise install
-fi
-
-# install claude code (https://code.claude.com/docs/ja/overview)
-if ! type claude > /dev/null 2>&1; then
-  curl -fsSL https://claude.ai/install.sh | bash
-  claude --version
 fi
 
 # change default shell

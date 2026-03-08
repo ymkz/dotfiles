@@ -42,7 +42,8 @@ export HISTFILE="${HOME}/.zsh_history"
 export HISTSIZE=100000
 export SAVEHIST=1000000
 
-export FZF_DEFAULT_OPTS="--height 40% --ansi --cycle --reverse --select-1 --exit-0"
+export ZENO_GIT_CAT="gat"
+export ZENO_GIT_TREE="eza --tree"
 
 path+=(
   "${HOME}/.cargo/bin"
@@ -57,14 +58,73 @@ typeset -U path PATH
 
 eval "$(mise activate zsh)"
 eval "$(starship init zsh)"
-eval "$(atuin init zsh --disable-up-arrow)"
-eval "$(git wt --init zsh)"
-
-source "${XDG_CONFIG_HOME}/zsh/alias.zsh"
-source "${XDG_CONFIG_HOME}/zsh/function.zsh"
 
 source "${XDG_DATA_HOME}/zsh/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh"
-source "${XDG_DATA_HOME}/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh"
+source "${XDG_DATA_HOME}/zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh"
+source "${XDG_DATA_HOME}/zsh/zeno/zeno.zsh"
+
+if [[ -n $ZENO_LOADED ]]; then
+  bindkey ' ' zeno-auto-snippet
+  bindkey '^m' zeno-auto-snippet-and-accept-line
+  bindkey '^i' zeno-completion
+  bindkey '^xx' zeno-insert-snippet
+  bindkey '^x '  zeno-insert-space
+  bindkey '^x^m' accept-line
+  bindkey '^x^z' zeno-toggle-auto-snippet
+  bindkey '^xp' zeno-preprompt
+  bindkey '^xs' zeno-preprompt-snippet
+  bindkey '^r' zeno-smart-history-selection
+  bindkey '^g' zeno-ghq-cd
+fi
+
+function gaic() {
+  COMMIT_MSG=$(pi --print 'Generate ONLY a one-line Git commit message, using imperative mood, summarizing what was changed and why, based strictly on the contents of `git diff --cached`. DO NOT add an explanation or a body. Output ONLY the commit summary line.')
+  git commit -m "$COMMIT_MSG" -e
+}
+
+alias cdw="cd ~/work"
+alias cds="cd ~/sandbox"
+alias coder="code . --reuse-window"
+alias ls="eza"
+alias la="eza -A"
+alias lt="eza --tree --level 1"
+alias ll="eza -Hlo --no-user --sort=type --time-style=long-iso"
+alias lla="eza -HAlo --no-user --sort=type --time-style=long-iso"
+
+# alias gpl="git pull"
+# alias gps="git push"
+# alias gs="git status --short --branch"
+# alias gl="git log -n 10 --date=short --pretty=format:'%C(yellow)%h %C(green)%cd %C(blue)%cn %C(reset)%s'"
+# alias gll="git log --date=short --pretty=format:'%C(yellow)%h %C(green)%cd %C(blue)%cn %C(reset)%s'"
+# alias gb="git branch"
+# alias gbl="git branch -a -vv"
+# alias ga="git add"
+# alias ga.="git add ."
+# alias gd="git diff"
+# alias gdc="git diff --cached"
+# alias gdw="git diff --color-words"
+# alias gds="git diff --color-words --word-diff-regex='\\\w+|[^[:space:]]'"
+# alias gnew="git switch --create"
+# alias grs="git restore"
+# alias gun="git reset HEAD"
+# alias gcm="git commit --message"
+# alias gini="git commit --allow-empty -m 'chore: initial empty commit'"
+# alias gg="git fetch --all --prune; git branch -vv | awk '/: gone]/{print \$1}' | xargs git branch -D"
+
+# function b() {
+#   local branch
+#   local current_branch
+#   current_branch=$(git symbolic-ref --short HEAD 2>/dev/null)
+#   branch=$(git for-each-ref --format='%(refname:short)' refs/heads refs/remotes \
+#     | grep -x -v 'origin' \
+#     | sed 's/origin\///' \
+#     | awk '!a[$1]++' \
+#     | grep -x -v "$current_branch" \
+#     | fzf +m --query="$LBUFFER" --prompt="branch > ")
+#   if [[ -n "$branch" ]]; then
+#     git switch "${branch}"
+#   fi
+# }
 
 autoload -Uz colors; colors
 autoload -Uz compinit; compinit

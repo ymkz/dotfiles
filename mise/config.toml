@@ -6,10 +6,7 @@ deno = "latest"
 bun = "latest"
 
 # from registry https://mise.jdx.dev/registry.html
-atuin = "latest"
 biome = "latest"
-cloudflared = "latest"
-codex = "latest"
 eza = "latest"
 fd = "latest"
 fzf = "latest"
@@ -26,8 +23,6 @@ yq = "latest"
 
 # from backends https://mise.jdx.dev/dev-tools/backends/
 "github:k1LoW/runn" = "latest"
-"github:k1LoW/git-wt" = "latest"
 "github:koki-develop/gat" = "latest"
 "github:stateful/runme" = "latest"
 "github:badlogic/pi-mono" = "latest"
-"github:github/copilot-cli" = "latest"
