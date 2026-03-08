@@ -5,9 +5,6 @@ snippets:
   - name: git status
     keyword: gs
     snippet: git status --short --branch
-  - name: git switch
-    keyword: gsw
-    snippet: git switch {{branch}}
   - name: git create new branch and switch
     keyword: gnew
     snippet: git switch --create {{branch}}
@@ -74,12 +71,3 @@ snippets:
   - name: npm project devDependencies
     keyword: devdeps
     snippet: cat package.json | jq -r '.devDependencies | keys[]' | tr '\n' ' '
-completions:
-  - name: git branch search
-    patterns:
-      - "^git switch $"
-      - "^git checkout $"
-      - "^git branch -[dD] $"
-    sourceCommand: "git branch --all --format='%(refname:short)' | grep -v 'HEAD'"
-    options:
-      --prompt: "Branch> "
