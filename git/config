@@ -20,11 +20,14 @@
 [tag]
   sort = version:refname
 [diff]
-  algorithm = histogram
-  colorMoved = plain
-  renames = true
-  mnemonicPrefix = true
-  compactionHeuristic = true
+  tool = difftastic
+  external = difft
+[difftool]
+  prompt = false
+[difftool "difftastic"]
+  cmd = difft "$LOCAL" "$REMOTE"
+[pager]
+  difftool = true
 [push]
   default = simple
   followTags = true

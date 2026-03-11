@@ -7,6 +7,7 @@ bun = "latest"
 
 # from registry https://mise.jdx.dev/registry.html
 biome = "latest"
+difftastic = "latest"
 eza = "latest"
 fd = "latest"
 fzf = "latest"
