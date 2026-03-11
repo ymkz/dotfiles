@@ -56,6 +56,10 @@ fpath+=(
 
 typeset -U path PATH
 
+autoload -Uz colors; colors
+autoload -Uz compinit; compinit
+autoload -Uz promptinit; promptinit
+
 eval "$(mise activate zsh)"
 eval "$(starship init zsh)"
 
@@ -77,6 +81,14 @@ if [[ -n $ZENO_LOADED ]]; then
   bindkey '^g' zeno-ghq-cd
 fi
 
+function zeno-git-switch() {
+    BUFFER="git switch "
+    CURSOR=${#BUFFER}
+    zle zeno-completion
+}
+zle -N zeno-git-switch
+bindkey '^b' zeno-git-switch
+
 alias cdw="cd ~/work"
 alias cds="cd ~/sandbox"
 alias coder="code . --reuse-window"
@@ -85,7 +97,3 @@ alias la="eza -A"
 alias lt="eza --tree --level 1"
 alias ll="eza -Hlo --no-user --sort=type --time-style=long-iso"
 alias lla="eza -HAlo --no-user --sort=type --time-style=long-iso"
-
-autoload -Uz colors; colors
-autoload -Uz compinit; compinit
-autoload -Uz promptinit; promptinit
