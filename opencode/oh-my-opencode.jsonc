@@ -1,20 +1,23 @@
 {
   "$schema": "https://raw.githubusercontent.com/code-yeongyu/oh-my-opencode/master/assets/oh-my-opencode.schema.json",
+  "sisyphus_agent": {
+    "default_builder_enabled": true
+  },
   "agents": {
-    "sisyphus": { "model": "opencode-go/kimi-k2.5", "variant": "xhigh" },
-    "prometheus": { "model": "opencode-go/kimi-k2.5", "variant": "xhigh" },
-    "atlas": { "model": "opencode-go/kimi-k2.5", "variant": "high" },
-    "oracle": { "model": "opencode-go/glm-5", "variant": "max" },
-    "librarian": { "model": "opencode-go/minimax-m2.5", "variant": "low" },
-    "explore": { "model": "opencode-go/minimax-m2.5", "variant": "low" },
-    "hephaestus": { "model": "opencode-go/minimax-m2.5", "variant": "high" },
-    "sisyphus-junior": { "model": "opencode-go/minimax-m2.5", "variant": "normal" }
+    "sisyphus": { "model": "opencode-go/kimi-k2.5" },
+    "prometheus": { "model": "opencode-go/kimi-k2.5" },
+    "atlas": { "model": "opencode-go/kimi-k2.5" },
+    "oracle": { "model": "opencode-go/glm-5" },
+    "librarian": { "model": "opencode-go/minimax-m2.5" },
+    "explore": { "model": "opencode-go/minimax-m2.5" },
+    "hephaestus": { "model": "opencode-go/minimax-m2.5" },
+    "sisyphus-junior": { "model": "opencode-go/minimax-m2.5" }
   },
   "categories": {
-    "quick": { "model": "opencode-go/minimax-m2.5", "variant": "low" },
-    "unspecified-low": { "model": "opencode-go/minimax-m2.5", "variant": "low" },
-    "unspecified-high": { "model": "opencode-go/glm-5", "variant": "xhigh" },
-    "writing": { "model": "opencode-go/kimi-k2.5", "variant": "normal" },
-    "visual-engineering": { "model": "opencode-go/glm-5", "variant": "high" }
+    "quick": { "model": "opencode-go/minimax-m2.5" },
+    "unspecified-low": { "model": "opencode-go/minimax-m2.5" },
+    "unspecified-high": { "model": "opencode-go/glm-5" },
+    "writing": { "model": "opencode-go/kimi-k2.5" },
+    "visual-engineering": { "model": "opencode-go/glm-5" }
   }
 }
