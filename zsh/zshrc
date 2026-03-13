@@ -42,6 +42,9 @@ export HISTFILE="${HOME}/.zsh_history"
 export HISTSIZE=100000
 export SAVEHIST=1000000
 
+export DO_NOT_TRACK=1
+export DISABLE_TELEMETRY=1
+
 export ZENO_GIT_CAT="gat"
 export ZENO_GIT_TREE="eza --tree"
 
