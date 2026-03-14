@@ -7,25 +7,18 @@ zstyle ':completion:*' list-colors "${LS_COLORS}"
 setopt no_beep
 setopt auto_cd
 setopt auto_pushd
-setopt auto_menu
 setopt list_packed
 setopt list_types
 setopt pushd_ignore_dups
-setopt correct
 setopt magic_equal_subst
 setopt complete_aliases
 setopt extended_glob
-setopt nonomatch
 setopt share_history
 setopt extended_history
 setopt inc_append_history
-setopt hist_ignore_dups
 setopt hist_ignore_space
 setopt hist_ignore_all_dups
 setopt hist_reduce_blanks
-
-unsetopt caseglob
-unsetopt promptcr
 
 export TZ="Asia/Tokyo"
 export LESS="-R"
@@ -40,7 +33,7 @@ export XDG_STATE_HOME=${XDG_STATE_HOME:="${HOME}/.local/state"}
 
 export HISTFILE="${HOME}/.zsh_history"
 export HISTSIZE=100000
-export SAVEHIST=1000000
+export SAVEHIST=100000
 
 export DO_NOT_TRACK=1
 export DISABLE_TELEMETRY=1
