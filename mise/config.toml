@@ -20,6 +20,7 @@ pnpm = "latest"
 ripgrep = "latest"
 starship = "latest"
 tbls = "latest"
+tmux = "latest"
 yq = "latest"
 
 # from backends https://mise.jdx.dev/dev-tools/backends/

@@ -79,3 +79,15 @@ snippets:
     keyword: devdeps
     snippet: |
       jq -r '.devDependencies | keys[]?' package.json | tr '\\n' ' '
+completions:
+  - name: kill pid
+    patterns:
+      - ^kill( .*)? $
+    excludePatterns:
+      - " -[lns] $"
+    sourceCommand: LANG=C ps -ef | sed 1d
+    options:
+      --multi: true
+      --prompt: "'Kill Process> '"
+    callback: awk '{print $2}'
+
