@@ -2,7 +2,8 @@
   "$schema": "https://opencode.ai/config.json",
   "model": "opencode-go/kimi-k2.5",
   "small_model": "opencode/gpt-5-nano",
-  "plugin": ["oh-my-opencode@latest"],
+  "plugin": ["superpowers@git+https://github.com/obra/superpowers.git"],
+  // "plugin": ["oh-my-opencode@latest"],
   "permission": {
     "read": "allow",
     "edit": "allow",
