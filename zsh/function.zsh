@@ -1,3 +1,11 @@
+function gca() {
+  local commit_message
+  commit_message=$(opencode --print "Review the contents of git diff --cached and generate a commit message in the Conventional Commit format. The output should be plain text only; Markdown code blocks should not be used.")
+  if [[ -n "$commit_message" ]]; then
+    git commit -m "$commit_message" -e
+  fi
+}
+
 function fzf_ghq_repository() {
   local root
   local repository
@@ -31,10 +39,14 @@ function fzf_git_branch() {
 zle -N fzf_git_branch
 bindkey '^b' fzf_git_branch
 
-function gca() {
-  local commit_message
-  commit_message=$(opencode --print "Review the contents of git diff --cached and generate a commit message in the Conventional Commit format. The output should be plain text only; Markdown code blocks should not be used.")
-  if [[ -n "$commit_message" ]]; then
-    git commit -m "$commit_message" -e
+function fzf_gh_pr_checkout() {
+  local pr_num
+  pr_num=$(gh pr list | column -s $'\t' -t | fzf +m --query="$LBUFFER" --prompt="PullRequest > " | awk '{print $1}')
+  if [[ -n "$pr" ]]; then
+    BUFFER="gh pr checkout ${pr_num}"
+    zle accept-line
   fi
+  zle reset-prompt
 }
+zle -N fzf_gh_pr_checkout
+bindkey '^p' fzf_gh_pr_checkout
