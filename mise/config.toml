@@ -25,7 +25,6 @@ yq = "latest"
 
 # from backends https://mise.jdx.dev/dev-tools/backends/
 "github:k1LoW/runn" = "latest"
-"github:k1LoW/mo" = "latest"
 "github:koki-develop/gat" = "latest"
 "github:stateful/runme" = "latest"
 "github:badlogic/pi-mono" = "latest"
