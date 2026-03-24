@@ -1,6 +1,6 @@
 function gca() {
   local commit_message
-  commit_message=$(opencode --print "Review the contents of git diff --cached and generate a commit message in the Conventional Commit format. The output should be plain text only; Markdown code blocks should not be used.")
+  commit_message=$(git diff --cached | opencode run "Review this git diff and generate a commit message in the Conventional Commit format. The output should be plain text only; Markdown code blocks should not be used.")
   if [[ -n "$commit_message" ]]; then
     git commit -m "$commit_message" -e
   fi
