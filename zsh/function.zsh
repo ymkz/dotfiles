@@ -33,7 +33,7 @@ bindkey '^b' fzf_git_branch
 
 function gca() {
   local commit_message
-  commit_message=$(pi --print 'Generate Conventional Commit from staged changes. Rules: 1) Format: type(scope): summary, blank line, body explaining what and why. 2) Use imperative mood. 3) Output ONLY the commit message as plain text, never use markdown code blocks.')
+  commit_message=$(opencode --print "Review the contents of git diff --cached and generate a commit message in the Conventional Commit format. The output should be plain text only; Markdown code blocks should not be used.")
   if [[ -n "$commit_message" ]]; then
     git commit -m "$commit_message" -e
   fi
