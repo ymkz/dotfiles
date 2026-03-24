@@ -1,0 +1,12 @@
+db_path = "~/.local/share/atuin/history.db"
+sync_address = ""
+auto_sync = false
+update_check = false
+enter_accept = false
+filter_mode = "host"
+
+[search]
+filters = ["host", "session", "directory"]
+
+[ui]
+columns = ["datetime", "command"]
