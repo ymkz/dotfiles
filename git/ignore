@@ -13,5 +13,4 @@ node_modules/
 # Project local working space
 .work/
 .local/
-.wt/
 .worktrees/
