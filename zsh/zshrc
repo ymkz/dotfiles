@@ -30,7 +30,7 @@ export XDG_CONFIG_HOME=${XDG_CONFIG_HOME:="${HOME}/.config"}
 export XDG_CACHE_HOME=${XDG_CACHE_HOME:="${HOME}/.cache"}
 export XDG_DATA_HOME=${XDG_DATA_HOME:="${HOME}/.local/share"}
 export XDG_STATE_HOME=${XDG_STATE_HOME:="${HOME}/.local/state"}
-export DOTFILES_DIR=${DOTFILES_DIR:="${HOME}/work/github.com/ymkz/dotfiles"}
+export DOTFILES_DIR=${DOTFILES_DIR:="${HOME}/work/github.com/${USER}/dotfiles"}
 
 export HISTFILE="${HOME}/.zsh_history"
 export HISTSIZE=100000
