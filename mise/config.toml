@@ -20,11 +20,8 @@ opencode = "latest"
 pnpm = "latest"
 ripgrep = "latest"
 tbls = "latest"
-tmux = "latest"
 yq = "latest"
 
 # from backends https://mise.jdx.dev/dev-tools/backends/
-"github:k1LoW/runn" = "latest"
 "github:koki-develop/gat" = "latest"
 "github:stateful/runme" = "latest"
-"github:badlogic/pi-mono" = "latest"
