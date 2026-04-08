@@ -8,6 +8,7 @@ bun = "latest"
 # from registry https://mise.jdx.dev/registry.html
 atuin = "latest"
 biome = "latest"
+codex = "latest"
 difftastic = "latest"
 eza = "latest"
 fd = "latest"
