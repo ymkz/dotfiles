@@ -6,6 +6,14 @@ function gca() {
   fi
 }
 
+function za() {
+  local session
+  session=$(zellij ls -s | fzf --prompt="Zellij Session > " | awk '{print $1}')
+  if [[ -n "$session" ]]; then
+    zellij attach "$session"
+  fi
+}
+
 function fzf_ghq_repository() {
   local root
   local repository
