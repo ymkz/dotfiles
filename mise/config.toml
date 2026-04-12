@@ -22,7 +22,9 @@ pnpm = "latest"
 ripgrep = "latest"
 tbls = "latest"
 yq = "latest"
+zellij = "latest"
 
 # from backends https://mise.jdx.dev/dev-tools/backends/
 "github:koki-develop/gat" = "latest"
 "github:stateful/runme" = "latest"
+"npm:@mariozechner/pi-coding-agent" = "latest"
