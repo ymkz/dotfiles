@@ -39,6 +39,8 @@ export SAVEHIST=100000
 export DO_NOT_TRACK=1
 export DISABLE_TELEMETRY=1
 
+export CODEX_HOME=/mnt/c/Users/ymkzq/.codex
+
 path+=(
   "${HOME}/.cargo/bin"
   "${HOME}/.local/bin"
