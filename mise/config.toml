@@ -26,3 +26,4 @@ yq = "latest"
 # from backends https://mise.jdx.dev/dev-tools/backends/
 "github:koki-develop/gat" = "latest"
 "github:stateful/runme" = "latest"
+"npm:@playwright/cli" = "latest"
