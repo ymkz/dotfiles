@@ -4,28 +4,5 @@
     "commit_footer": false,
     "include_co_authored_by": false,
     "git_env_prefix": "GIT_MASTER=1"
-  },
-  "agents": {
-    "sisyphus": { "model": "opencode-go/kimi-k2.5" },
-    "hephaestus": { "model": "opencode-go/glm-5" },
-    "prometheus": { "model": "opencode-go/minimax-m2.5" },
-    "metis": { "model": "opencode-go/minimax-m2.5" },
-    "momus": { "model": "opencode-go/minimax-m2.5" },
-    "oracle": { "model": "opencode-go/kimi-k2.5" },
-    "librarian": { "model": "opencode-go/kimi-k2.5" },
-    "atlas": { "model": "opencode-go/kimi-k2.5" },
-    "explore": { "model": "opencode/gpt-5-nano" },
-    "multimodal-looker": { "model": "opencode-go/glm-5" },
-    "sisyphus-junior": { "model": "opencode/gpt-5-nano" }
-  },
-  "categories": {
-    "visual-engineering": { "model": "opencode-go/glm-5" },
-    "ultrabrain": { "model": "opencode-go/minimax-m2.5" },
-    "deep": { "model": "opencode-go/glm-5" },
-    "artistry": { "model": "opencode-go/kimi-k2.5" },
-    "quick": { "model": "opencode/gpt-5-nano" },
-    "unspecified-low": { "model": "opencode/gpt-5-nano" },
-    "unspecified-high": { "model": "opencode-go/glm-5" },
-    "writing": { "model": "opencode-go/kimi-k2.5" }
   }
 }
