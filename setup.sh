@@ -18,12 +18,13 @@ mkdir -p "${HOME}/sandbox"
 
 ### fetch dotfiles
 git clone https://github.com/ymkz/dotfiles.git "${DOTFILES_DIR}"
+cd ${DOTFILES_DIR} && git remote set-url origin git@github.com:ymkz/dotfiles.git && cd -
 
 ### setup linux on wsl
 sudo add-apt-repository -y ppa:git-core/ppa
 sudo apt update -y
 sudo apt upgrade -y
-sudo apt install -y build-essential language-pack-ja procps curl wget git zip unzip zsh sqlite3
+sudo apt install -y build-essential util-linux-extra language-pack-ja procps curl wget git zip unzip zsh sqlite3
 sudo unlink /etc/resolv.conf
 sudo cp "${DOTFILES_DIR}/wsl/wsl.conf" "/etc/wsl.conf"
 sudo cp "${DOTFILES_DIR}/wsl/resolv.conf" "/etc/resolv.conf"
@@ -35,11 +36,13 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${XDG_DATA_HOM
 git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions "${XDG_DATA_HOME}/zsh/zsh-autosuggestions"
 git clone --depth=1 https://github.com/zdharma-continuum/fast-syntax-highlighting "${XDG_DATA_HOME}/zsh/fast-syntax-highlighting"
 
-### install rust (https://www.rust-lang.org/ja/tools/install)
+### install rust
+### - https://www.rust-lang.org/ja/tools/install
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 rustup --version
 
-### install mise (https://mise.jdx.dev/installing-mise.html)
+### install mise
+### - https://mise.jdx.dev/installing-mise.html
 curl https://mise.run | sh
 eval "$($HOME/.local/bin/mise activate)"
 mise --version
@@ -65,6 +68,16 @@ ln -nfs "${DOTFILES_DIR}/mise/config.toml" "${XDG_CONFIG_HOME}/mise/config.toml"
 
 mkdir -p "${XDG_CONFIG_HOME}/atuin"
 ln -nfs "${DOTFILES_DIR}/atuin/config.toml" "${XDG_CONFIG_HOME}/atuin/config.toml"
+
+### install and setup docker
+### - https://docs.docker.com/engine/install/ubuntu/#install-using-the-convenience-script
+### - https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
+sudo groupadd docker
+sudo usermod -aG docker $USER
+newgrp docker
+rm get-docker.sh
 
 ### change default shell
 which zsh | sudo tee -a /etc/shells

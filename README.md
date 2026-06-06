@@ -2,29 +2,8 @@
 
 ## Usage
 
-setup
-
 ```sh
 curl -sSfL https://raw.githubusercontent.com/ymkz/dotfiles/HEAD/setup.sh | bash
-```
-
-then
-
-```sh
-# change ymkz/dotfiles upstream protocol for ssh
-git remote set-url origin git@github.com:ymkz/dotfiles.git
-
-# generate ssh key, currently using 1password ssh-agent
-# ssh-keygen -t ed25519
-# cat ${HOME}/.ssh/id_ed25519.pub
-
-# install docker (https://docs.docker.com/engine/install/ubuntu/#install-using-the-convenience-script)
-# setup docker (https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user)
-curl -fsSL https://get.docker.com -o get-docker.sh
-sudo sh get-docker.sh
-sudo usermod -aG docker $USER
-newgrp docker
-rm get-docker.sh
 ```
 
 ## Reset WSL
