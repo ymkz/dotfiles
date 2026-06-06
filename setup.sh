@@ -56,11 +56,6 @@ ln -nfs "${DOTFILES_DIR}/mise/config.toml" "${XDG_CONFIG_HOME}/mise/config.toml"
 mkdir -p "${XDG_CONFIG_HOME}/atuin"
 ln -nfs "${DOTFILES_DIR}/atuin/config.toml" "${XDG_CONFIG_HOME}/atuin/config.toml"
 
-mkdir -p "${XDG_CONFIG_HOME}/opencode"
-ln -nfs "${DOTFILES_DIR}/opencode/opencode.jsonc" "${XDG_CONFIG_HOME}/opencode/opencode.jsonc"
-ln -nfs "${DOTFILES_DIR}/opencode/oh-my-opencode-slim.jsonc" "${XDG_CONFIG_HOME}/opencode/oh-my-opencode-slim.jsonc"
-# ln -nfs "${DOTFILES_DIR}/opencode/oh-my-opencode.jsonc" "${XDG_CONFIG_HOME}/opencode/oh-my-opencode.jsonc"
-
 ### install rust (https://www.rust-lang.org/ja/tools/install)
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 rustup --version
