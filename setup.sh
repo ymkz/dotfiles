@@ -45,7 +45,7 @@ git clone --depth=1 https://github.com/zdharma-continuum/fast-syntax-highlightin
 ### - https://mise.jdx.dev/installing-mise.html
 curl https://mise.run | sh
 eval "$($HOME/.local/bin/mise activate)"
-mise --version
+mise doctor
 mise install
 
 ### deploy dotfiles
@@ -74,7 +74,6 @@ ln -nfs "${DOTFILES_DIR}/atuin/config.toml" "${XDG_CONFIG_HOME}/atuin/config.tom
 ### - https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user
 curl -fsSL https://get.docker.com -o get-docker.sh
 sudo sh get-docker.sh
-sudo groupadd docker
 sudo usermod -aG docker $USER
 newgrp docker
 rm get-docker.sh
