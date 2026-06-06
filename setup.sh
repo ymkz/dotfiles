@@ -38,8 +38,8 @@ git clone --depth=1 https://github.com/zdharma-continuum/fast-syntax-highlightin
 
 ### install rust
 ### - https://www.rust-lang.org/ja/tools/install
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-rustup --version
+# curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+# rustup --version
 
 ### install mise
 ### - https://mise.jdx.dev/installing-mise.html
