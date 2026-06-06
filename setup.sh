@@ -35,6 +35,16 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${XDG_DATA_HOM
 git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions "${XDG_DATA_HOME}/zsh/zsh-autosuggestions"
 git clone --depth=1 https://github.com/zdharma-continuum/fast-syntax-highlighting "${XDG_DATA_HOME}/zsh/fast-syntax-highlighting"
 
+### install rust (https://www.rust-lang.org/ja/tools/install)
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+rustup --version
+
+### install mise (https://mise.jdx.dev/installing-mise.html)
+curl https://mise.run | sh
+eval "$($HOME/.local/bin/mise activate)"
+mise --version
+mise install
+
 ### deploy dotfiles
 ln -nfs "${DOTFILES_DIR}/zsh/zshrc" "${HOME}/.zshrc"
 ln -nfs "${DOTFILES_DIR}/vim/vimrc" "${HOME}/.vimrc"
@@ -55,16 +65,6 @@ ln -nfs "${DOTFILES_DIR}/mise/config.toml" "${XDG_CONFIG_HOME}/mise/config.toml"
 
 mkdir -p "${XDG_CONFIG_HOME}/atuin"
 ln -nfs "${DOTFILES_DIR}/atuin/config.toml" "${XDG_CONFIG_HOME}/atuin/config.toml"
-
-### install rust (https://www.rust-lang.org/ja/tools/install)
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-rustup --version
-
-### install mise (https://mise.jdx.dev/installing-mise.html)
-curl https://mise.run | sh
-eval "$($HOME/.local/bin/mise activate)"
-mise --version
-mise install
 
 ### change default shell
 which zsh | sudo tee -a /etc/shells
