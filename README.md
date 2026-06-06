@@ -10,7 +10,10 @@ curl -sSfL https://raw.githubusercontent.com/ymkz/dotfiles/HEAD/setup.sh | bash
 
 ```sh
 wsl.exe --unregister Ubuntu
+```
 
-# after restarting the terminal
+after restarting the terminal
+
+```sh
 wsl.exe --install Ubuntu
 ```
