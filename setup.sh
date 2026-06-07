@@ -69,6 +69,10 @@ ln -nfs "${DOTFILES_DIR}/mise/config.toml" "${XDG_CONFIG_HOME}/mise/config.toml"
 mkdir -p "${XDG_CONFIG_HOME}/atuin"
 ln -nfs "${DOTFILES_DIR}/atuin/config.toml" "${XDG_CONFIG_HOME}/atuin/config.toml"
 
+### install codex
+### - https://developers.openai.com/codex/cli
+curl -fsSL https://chatgpt.com/codex/install.sh | CODEX_NON_INTERACTIVE=1 sh
+
 ### install and setup docker
 ### - https://docs.docker.com/engine/install/ubuntu/#install-using-the-convenience-script
 ### - https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user
