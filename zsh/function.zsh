@@ -1,17 +1,5 @@
-function gca() {
-  local commit_message
-  commit_message=$(git diff --cached | opencode run "Review this git diff and generate a commit message in the Conventional Commit format. The output should be plain text only; Markdown code blocks should not be used.")
-  if [[ -n "$commit_message" ]]; then
-    git commit -m "$commit_message" -e
-  fi
-}
-
-function za() {
-  local session
-  session=$(zellij ls -s | fzf --prompt="Zellij Session > " | awk '{print $1}')
-  if [[ -n "$session" ]]; then
-    zellij attach "$session"
-  fi
+function gess() {
+  gat --force-color "$@" | less -R
 }
 
 function fzf_ghq_repository() {
@@ -50,7 +38,7 @@ bindkey '^b' fzf_git_branch
 function fzf_gh_pr_checkout() {
   local pr_num
   pr_num=$(gh pr list | column -s $'\t' -t | fzf +m --query="$LBUFFER" --prompt="PullRequest > " | awk '{print $1}')
-  if [[ -n "$pr" ]]; then
+  if [[ -n "$pr_num" ]]; then
     BUFFER="gh pr checkout ${pr_num}"
     zle accept-line
   fi
