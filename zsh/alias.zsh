@@ -39,6 +39,9 @@ alias gg='git fetch --all --prune && git branch -vv | awk "/: gone]/{print \$1}"
 alias coder='code . --reuse-window'
 alias oc='opencode'
 alias occ='opencode --continue'
+alias pic='pi --continue'
+alias clc='claude --continue'
+alias cdc='codex resume --last'
 
 alias pbcopy='clip.exe'
 alias pbpaste='powershell.exe -command "Get-Clipboard"'

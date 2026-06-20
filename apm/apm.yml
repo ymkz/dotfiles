@@ -1,0 +1,16 @@
+name: harness
+version: 1.0.0
+description: agent harness distributor for me
+author: ymkz
+targets:
+  - codex
+  - claude
+dependencies:
+  apm:
+    - ymkz/harness/skills/git-commit
+    - ymkz/harness/skills/premortem
+    - ymkz/harness/skills/japanese-tech-writing
+    - ymkz/harness/skills/argument-gap-edit
+  mcp: []
+includes: auto
+scripts: {}

@@ -36,11 +36,6 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${XDG_DATA_HOM
 git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions "${XDG_DATA_HOME}/zsh/zsh-autosuggestions"
 git clone --depth=1 https://github.com/zdharma-continuum/fast-syntax-highlighting "${XDG_DATA_HOME}/zsh/fast-syntax-highlighting"
 
-### install rust
-### - https://www.rust-lang.org/ja/tools/install
-# curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-# rustup --version
-
 ### install mise
 ### - https://mise.jdx.dev/installing-mise.html
 curl https://mise.run | sh
@@ -69,9 +64,16 @@ ln -nfs "${DOTFILES_DIR}/mise/config.toml" "${XDG_CONFIG_HOME}/mise/config.toml"
 mkdir -p "${XDG_CONFIG_HOME}/atuin"
 ln -nfs "${DOTFILES_DIR}/atuin/config.toml" "${XDG_CONFIG_HOME}/atuin/config.toml"
 
+mkdir -p "${HOME}/.apm"
+ln -nfs "${DOTFILES_DIR}/apm/apm.yml" "${HOME}/.apm/apm.yml"
+
 ### install codex
 ### - https://developers.openai.com/codex/cli
 curl -fsSL https://chatgpt.com/codex/install.sh | CODEX_NON_INTERACTIVE=1 sh
+
+### install claude code
+### - https://code.claude.com/docs/ja/overview
+curl -fsSL https://claude.ai/install.sh | bash
 
 ### install and setup docker
 ### - https://docs.docker.com/engine/install/ubuntu/#install-using-the-convenience-script

@@ -3,6 +3,8 @@
 java = "temurin-21.0.6+7.0.LTS"
 node = "latest"
 deno = "latest"
+rust = "latest"
+go = "latest"
 
 # from registry https://mise.jdx.dev/registry.html
 ast-grep = "latest"
@@ -24,3 +26,4 @@ yq = "latest"
 # from backends https://mise.jdx.dev/dev-tools/backends/
 "github:koki-develop/gat" = "latest"
 "github:stateful/runme" = "latest"
+"github:microsoft/apm" = "latest"
