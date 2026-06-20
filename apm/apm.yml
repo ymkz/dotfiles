@@ -10,6 +10,7 @@ dependencies:
     - ymkz/harness/skills/git-commit
     - ymkz/harness/skills/japanese-tech-writing
     - ymkz/harness/skills/argument-gap-edit
+    - mattpocock/skills/skills/productivity/handoff
   mcp: []
 includes: auto
 scripts: {}

@@ -75,6 +75,10 @@ curl -fsSL https://chatgpt.com/codex/install.sh | CODEX_NON_INTERACTIVE=1 sh
 ### - https://code.claude.com/docs/ja/overview
 curl -fsSL https://claude.ai/install.sh | bash
 
+### install agent harness
+### - https://github.com/ymkz/harness
+apm install --global
+
 ### install and setup docker
 ### - https://docs.docker.com/engine/install/ubuntu/#install-using-the-convenience-script
 ### - https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user
