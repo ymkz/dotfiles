@@ -8,7 +8,6 @@ targets:
 dependencies:
   apm:
     - ymkz/harness/skills/git-commit
-    - ymkz/harness/skills/premortem
     - ymkz/harness/skills/japanese-tech-writing
     - ymkz/harness/skills/argument-gap-edit
   mcp: []
