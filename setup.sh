@@ -75,6 +75,14 @@ curl -fsSL https://chatgpt.com/codex/install.sh | CODEX_NON_INTERACTIVE=1 sh
 ### - https://code.claude.com/docs/ja/overview
 curl -fsSL https://claude.ai/install.sh | bash
 
+### install opencode
+### - https://opencode.ai/
+curl -fsSL https://opencode.ai/install | bash
+
+### install herdr
+### - https://herdr.dev/
+curl -fsSL https://herdr.dev/install.sh | sh
+
 ### install agent harness
 ### - https://github.com/ymkz/harness
 apm install --global

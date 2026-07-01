@@ -17,7 +17,6 @@ github-cli = "latest"
 hunk = "latest"
 jq = "latest"
 ni = "latest"
-pi = "latest"
 pnpm = "latest"
 ripgrep = "latest"
 tbls = "latest"
@@ -27,3 +26,6 @@ yq = "latest"
 "github:koki-develop/gat" = "latest"
 "github:stateful/runme" = "latest"
 "github:microsoft/apm" = "latest"
+
+[settings]
+experimental = true

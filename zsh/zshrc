@@ -40,8 +40,9 @@ export DO_NOT_TRACK=1
 export DISABLE_TELEMETRY=1
 
 path+=(
-  "${HOME}/.cargo/bin"
   "${HOME}/.local/bin"
+  "${HOME}/.cargo/bin"
+  "${HOME}/.opencode/bin"
 )
 
 fpath+=(
