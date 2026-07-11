@@ -1,6 +1,7 @@
 [user]
   name = ymkz
   email = ymkz@users.noreply.github.com
+  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILj8Wt94dRCr9uXjmsw4jvuXo5MdS6UTE+ElkHbYtMP7
 
 [init]
   defaultBranch = main
@@ -29,6 +30,7 @@
   pruneTags = true
 [commit]
   verbose = true
+  gpgsign = true
 [rerere]
   enabled = true
   autoupdate = true
@@ -36,6 +38,11 @@
   autoSquash = true
   autoStash = true
   updateRefs = true
+[gpg]
+  format = ssh
+
+[include]
+    path = config.local
 
 [ghq]
   root = ~/work
