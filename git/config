@@ -40,9 +40,9 @@
   updateRefs = true
 [gpg]
   format = ssh
-
-[include]
-    path = config.local
+[gpg "ssh"]
+  program = op-ssh-sign.exe
+  allowedSignersFile = ~/.config/git/signers
 
 [ghq]
   root = ~/work

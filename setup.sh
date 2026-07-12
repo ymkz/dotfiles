@@ -57,6 +57,7 @@ ln -nfs "${DOTFILES_DIR}/zsh/function.zsh" "${XDG_CONFIG_HOME}/zsh/function.zsh"
 mkdir -p "${XDG_CONFIG_HOME}/git"
 ln -nfs "${DOTFILES_DIR}/git/config" "${XDG_CONFIG_HOME}/git/config"
 ln -nfs "${DOTFILES_DIR}/git/ignore" "${XDG_CONFIG_HOME}/git/ignore"
+ln -nfs "${DOTFILES_DIR}/git/signers" "${XDG_CONFIG_HOME}/git/signers"
 
 mkdir -p "${XDG_CONFIG_HOME}/mise"
 ln -nfs "${DOTFILES_DIR}/mise/config.toml" "${XDG_CONFIG_HOME}/mise/config.toml"
