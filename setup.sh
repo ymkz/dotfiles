@@ -65,9 +65,6 @@ ln -nfs "${DOTFILES_DIR}/mise/config.toml" "${XDG_CONFIG_HOME}/mise/config.toml"
 mkdir -p "${XDG_CONFIG_HOME}/atuin"
 ln -nfs "${DOTFILES_DIR}/atuin/config.toml" "${XDG_CONFIG_HOME}/atuin/config.toml"
 
-mkdir -p "${HOME}/.apm"
-ln -nfs "${DOTFILES_DIR}/apm/apm.yml" "${HOME}/.apm/apm.yml"
-
 ### install codex
 ### - https://developers.openai.com/codex/cli
 curl -fsSL https://chatgpt.com/codex/install.sh | CODEX_NON_INTERACTIVE=1 sh
@@ -83,10 +80,6 @@ curl -fsSL https://opencode.ai/install | bash
 ### install herdr
 ### - https://herdr.dev/
 curl -fsSL https://herdr.dev/install.sh | sh
-
-### install agent harness
-### - https://github.com/ymkz/harness
-apm install --global
 
 ### install and setup docker
 ### - https://docs.docker.com/engine/install/ubuntu/#install-using-the-convenience-script
