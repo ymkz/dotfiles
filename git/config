@@ -10,12 +10,13 @@
   precomposeunicode = true
   ignorecase = false
   quotepath = false
-  pager = hunk pager
   sshCommand = ssh.exe
 [column]
   ui = auto
 [status]
   showUntrackedFiles = all
+[diff]
+  external = difft
 [branch]
   sort = -committerdate
 [tag]

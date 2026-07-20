@@ -7,8 +7,10 @@ rust = "latest"
 go = "latest"
 
 # from registry https://mise.jdx.dev/registry.html
+apm = "latest"
 ast-grep = "latest"
 atuin = "latest"
+difftastic = "latest"
 eza = "latest"
 fd = "latest"
 fzf = "latest"
@@ -25,7 +27,6 @@ yq = "latest"
 # from backends https://mise.jdx.dev/dev-tools/backends/
 "github:koki-develop/gat" = "latest"
 "github:stateful/runme" = "latest"
-"github:microsoft/apm" = "latest"
 
 [settings]
 experimental = true
