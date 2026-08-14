@@ -69,17 +69,17 @@ ln -nfs "${DOTFILES_DIR}/atuin/config.toml" "${XDG_CONFIG_HOME}/atuin/config.tom
 ### - https://developers.openai.com/codex/cli
 curl -fsSL https://chatgpt.com/codex/install.sh | CODEX_NON_INTERACTIVE=1 sh
 
-### install claude code
-### - https://code.claude.com/docs/ja/overview
-curl -fsSL https://claude.ai/install.sh | bash
+# ### install claude code
+# ### - https://code.claude.com/docs/ja/overview
+# curl -fsSL https://claude.ai/install.sh | bash
 
-### install opencode
-### - https://opencode.ai/
-curl -fsSL https://opencode.ai/install | bash
+# ### install opencode
+# ### - https://opencode.ai/
+# curl -fsSL https://opencode.ai/install | bash
 
-### install herdr
-### - https://herdr.dev/
-curl -fsSL https://herdr.dev/install.sh | sh
+# ### install herdr
+# ### - https://herdr.dev/
+# curl -fsSL https://herdr.dev/install.sh | sh
 
 ### install and setup docker
 ### - https://docs.docker.com/engine/install/ubuntu/#install-using-the-convenience-script
