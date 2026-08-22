@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+# xdg-open shim for WSL: delegate to Windows Start-Process via pwsh.exe.
+# - URL (scheme://... or mailto:/tel:/sms:) is passed through verbatim.
+# - Anything else is treated as a path and converted with `wslpath -w`.
+### - https://zenn.dev/yutakashoji/articles/wsl-xdg-open-without-wslu
+set -euo pipefail
+
+if command -v pwsh.exe >/dev/null 2>&1; then
+    pwsh=pwsh.exe
+else
+    pwsh='/mnt/c/Windows/System32/WindowsPowerShell/v1.0/powershell.exe'
+fi
+
+if [[ $# -eq 0 ]]; then
+    printf 'Usage: %s <file|URL>\n' "${0##*/}" >&2
+    exit 1
+fi
+
+target=$1
+
+if [[ $target =~ ^[a-zA-Z][a-zA-Z0-9+.-]*:// ]] \
+    || [[ $target =~ ^(mailto|tel|sms): ]]; then
+    arg=$target
+else
+    arg=$(wslpath -w -- "$target")
+fi
+
+# Escape single quotes for PowerShell (double them).
+escaped=${arg//\'/\'\'}
+
+exec "$pwsh" -NoProfile -NonInteractive -NoLogo -Command "Start-Process -FilePath '$escaped'"

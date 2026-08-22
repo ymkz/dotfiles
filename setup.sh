@@ -43,6 +43,10 @@ eval "$($HOME/.local/bin/mise activate)"
 mise doctor
 mise install
 
+mkdir -p "${HOME}/.local/bin"
+ln -nfs "${DOTFILES_DIR}/bin/xdg-open" "${HOME}/.local/bin/xdg-open"
+ln -nfs xdg-open "${HOME}/.local/bin/open"
+
 ### deploy dotfiles
 ln -nfs "${DOTFILES_DIR}/zsh/zshrc" "${HOME}/.zshrc"
 ln -nfs "${DOTFILES_DIR}/vim/vimrc" "${HOME}/.vimrc"

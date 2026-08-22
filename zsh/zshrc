@@ -36,6 +36,8 @@ export HISTFILE="${HOME}/.zsh_history"
 export HISTSIZE=100000
 export SAVEHIST=100000
 
+export BROWSER="xdg-open"
+
 export DO_NOT_TRACK=1
 export DISABLE_TELEMETRY=1
 
