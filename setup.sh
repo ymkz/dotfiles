@@ -73,6 +73,10 @@ ln -nfs "${DOTFILES_DIR}/atuin/config.toml" "${XDG_CONFIG_HOME}/atuin/config.tom
 ### - https://developers.openai.com/codex/cli
 curl -fsSL https://chatgpt.com/codex/install.sh | CODEX_NON_INTERACTIVE=1 sh
 
+### install agentsview
+### - https://www.agentsview.io/quickstart/
+curl -fsSL https://agentsview.io/install.sh | bash
+
 # ### install claude code
 # ### - https://code.claude.com/docs/ja/overview
 # curl -fsSL https://claude.ai/install.sh | bash
