@@ -15,5 +15,5 @@ node_modules/
 .local/
 .worktrees/
 
- # Claude Code
-**/.claude/settings.local.json
+# orca
+.orca
