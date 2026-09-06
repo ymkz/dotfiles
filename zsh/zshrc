@@ -15,7 +15,6 @@ setopt complete_aliases
 setopt extended_glob
 setopt share_history
 setopt extended_history
-setopt inc_append_history
 setopt hist_ignore_space
 setopt hist_ignore_all_dups
 setopt hist_reduce_blanks
