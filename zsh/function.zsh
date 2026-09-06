@@ -19,15 +19,25 @@ bindkey '^g' fzf_ghq_repository
 function fzf_git_branch() {
   local branch
   local current_branch
+  local remote_branch
+  local local_branch
   current_branch=$(git symbolic-ref --short HEAD 2>/dev/null)
-  branch=$(git for-each-ref --format='%(refname:short)' refs/heads refs/remotes \
-    | grep -x -v 'origin' \
-    | sed 's/origin\///' \
-    | awk '!a[$1]++' \
-    | grep -x -v "$current_branch" \
+  branch=$(git for-each-ref --format='%(refname:lstrip=1) %(symref)' refs/heads refs/remotes \
+    | awk 'NF == 1 {print $1}' \
+    | grep -F -x -v -- "heads/${current_branch}" \
     | fzf +m --query="$LBUFFER" --prompt="Branch > ")
   if [[ -n "$branch" ]]; then
-    BUFFER="git switch '${branch}'"
+    if [[ "$branch" == heads/* ]]; then
+      BUFFER="git switch '${branch#heads/}'"
+    else
+      remote_branch=${branch#remotes/}
+      local_branch=${remote_branch#*/}
+      if git show-ref --verify --quiet "refs/heads/${local_branch}"; then
+        BUFFER="git switch '${local_branch}'"
+      else
+        BUFFER="git switch --track -c '${local_branch}' 'refs/remotes/${remote_branch}'"
+      fi
+    fi
     zle accept-line
   fi
   zle reset-prompt

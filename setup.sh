@@ -17,31 +17,27 @@ mkdir -p "${HOME}/work"
 mkdir -p "${HOME}/sandbox"
 
 ### fetch dotfiles
-git clone https://github.com/ymkz/dotfiles.git "${DOTFILES_DIR}"
-cd ${DOTFILES_DIR} && git remote set-url origin git@github.com:ymkz/dotfiles.git && cd -
+[[ -e "${DOTFILES_DIR}/.git" ]] ||
+  git clone https://github.com/ymkz/dotfiles.git "${DOTFILES_DIR}"
+git -C "${DOTFILES_DIR}" remote set-url origin git@github.com:ymkz/dotfiles.git
 
 ### setup linux on wsl
 sudo add-apt-repository -y ppa:git-core/ppa
 sudo apt update -y
 sudo apt upgrade -y
 sudo apt install -y build-essential util-linux-extra language-pack-ja procps curl wget git zip unzip zsh sqlite3
-sudo unlink /etc/resolv.conf
 sudo cp "${DOTFILES_DIR}/wsl/wsl.conf" "/etc/wsl.conf"
-sudo cp "${DOTFILES_DIR}/wsl/resolv.conf" "/etc/resolv.conf"
-sudo chattr +i /etc/resolv.conf
 
 ### fetch zsh plugins
 mkdir -p "${XDG_DATA_HOME}/zsh"
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${XDG_DATA_HOME}/zsh/powerlevel10k"
-git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions "${XDG_DATA_HOME}/zsh/zsh-autosuggestions"
-git clone --depth=1 https://github.com/zdharma-continuum/fast-syntax-highlighting "${XDG_DATA_HOME}/zsh/fast-syntax-highlighting"
+[[ -e "${XDG_DATA_HOME}/zsh/powerlevel10k/.git" ]] ||
+  git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${XDG_DATA_HOME}/zsh/powerlevel10k"
 
-### install mise
-### - https://mise.jdx.dev/installing-mise.html
-curl https://mise.run | sh
-eval "$($HOME/.local/bin/mise activate)"
-mise doctor
-mise install
+[[ -e "${XDG_DATA_HOME}/zsh/zsh-autosuggestions/.git" ]] ||
+  git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions "${XDG_DATA_HOME}/zsh/zsh-autosuggestions"
+
+[[ -e "${XDG_DATA_HOME}/zsh/fast-syntax-highlighting/.git" ]] ||
+  git clone --depth=1 https://github.com/zdharma-continuum/fast-syntax-highlighting "${XDG_DATA_HOME}/zsh/fast-syntax-highlighting"
 
 mkdir -p "${HOME}/.local/bin"
 ln -nfs "${DOTFILES_DIR}/bin/xdg-open" "${HOME}/.local/bin/xdg-open"
@@ -69,6 +65,13 @@ ln -nfs "${DOTFILES_DIR}/mise/config.toml" "${XDG_CONFIG_HOME}/mise/config.toml"
 mkdir -p "${XDG_CONFIG_HOME}/atuin"
 ln -nfs "${DOTFILES_DIR}/atuin/config.toml" "${XDG_CONFIG_HOME}/atuin/config.toml"
 
+### install mise
+### - https://mise.jdx.dev/installing-mise.html
+curl -fsSL https://mise.run | sh
+eval "$("${HOME}/.local/bin/mise" activate bash)"
+mise install
+mise doctor
+
 ### install codex
 ### - https://developers.openai.com/codex/cli
 curl -fsSL https://chatgpt.com/codex/install.sh | CODEX_NON_INTERACTIVE=1 sh
@@ -94,10 +97,11 @@ curl -fsSL https://agentsview.io/install.sh | bash
 ### - https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user
 curl -fsSL https://get.docker.com -o get-docker.sh
 sudo sh get-docker.sh
-sudo usermod -aG docker $USER
-newgrp docker
+sudo usermod -aG docker "${USER}"
 rm get-docker.sh
 
 ### change default shell
 which zsh | sudo tee -a /etc/shells
 sudo chsh "${USER}" -s "$(which zsh)"
+
+printf '%s\n' 'Setup complete. Log out and back in to apply the Docker group and default shell changes.'
