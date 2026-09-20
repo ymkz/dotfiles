@@ -15,8 +15,6 @@
   ui = auto
 [status]
   showUntrackedFiles = all
-[diff]
-  external = difft
 [branch]
   sort = -committerdate
 [tag]

@@ -10,7 +10,6 @@ go = "latest"
 apm = "latest"
 ast-grep = "latest"
 atuin = "latest"
-difftastic = "latest"
 eza = "latest"
 fd = "latest"
 fzf = "latest"
@@ -23,12 +22,8 @@ ni = "latest"
 pnpm = "latest"
 ripgrep = "latest"
 tbls = "latest"
-viteplus = "latest"
 yq = "latest"
 
 # from backends https://mise.jdx.dev/dev-tools/backends/
 "github:koki-develop/gat" = "latest"
 "github:stateful/runme" = "latest"
-
-[settings]
-experimental = true
