@@ -16,6 +16,40 @@ function fzf_ghq_repository() {
 zle -N fzf_ghq_repository
 bindkey '^g' fzf_ghq_repository
 
+function git_detach_branch_worktree() {
+  local branch="${1:?Usage: git_detach_branch_worktree <branch> <target worktree>}"
+  local target="${2:?Usage: git_detach_branch_worktree <branch> <target worktree>}"
+  local worktree
+
+  worktree=$(git -C "$target" worktree list --porcelain | awk -v ref="refs/heads/${branch}" '
+    /^worktree / { path = substr($0, 10) }
+    $0 == "branch " ref { print path; exit }
+  ')
+
+  if [[ -n "$worktree" && "$worktree" != "$target" ]]; then
+    if [[ -n "$(git -C "$worktree" status --porcelain)" ]]; then
+      print -u2 "Worktree has uncommitted changes: ${worktree}"
+      return 1
+    fi
+    git -C "$worktree" switch --detach
+  fi
+}
+
+function git_switch_branch() {
+  local branch="${1:?Usage: git_switch_branch <branch> [start point]}"
+  local start_point="${2:-}"
+  local target
+
+  target=$(git rev-parse --path-format=absolute --show-toplevel) || return
+  git_detach_branch_worktree "$branch" "$target" || return
+
+  if [[ -n "$start_point" ]]; then
+    git switch --track -c "$branch" "$start_point"
+  else
+    git switch "$branch"
+  fi
+}
+
 function fzf_git_branch() {
   local branch
   local current_branch
@@ -28,14 +62,14 @@ function fzf_git_branch() {
     | fzf +m --query="$LBUFFER" --prompt="Branch > ")
   if [[ -n "$branch" ]]; then
     if [[ "$branch" == heads/* ]]; then
-      BUFFER="git switch '${branch#heads/}'"
+      BUFFER="git_switch_branch '${branch#heads/}'"
     else
       remote_branch=${branch#remotes/}
       local_branch=${remote_branch#*/}
       if git show-ref --verify --quiet "refs/heads/${local_branch}"; then
-        BUFFER="git switch '${local_branch}'"
+        BUFFER="git_switch_branch '${local_branch}'"
       else
-        BUFFER="git switch --track -c '${local_branch}' 'refs/remotes/${remote_branch}'"
+        BUFFER="git_switch_branch '${local_branch}' 'refs/remotes/${remote_branch}'"
       fi
     fi
     zle accept-line
@@ -50,7 +84,6 @@ function gh_pr_open_local() {
   local common_dir
   local local_root
   local branch
-  local worktree
 
   common_dir=$(git rev-parse --path-format=absolute --git-common-dir) || return
   local_root=${common_dir:h}
@@ -61,18 +94,7 @@ function gh_pr_open_local() {
   fi
 
   branch=$(cd "$local_root" && gh pr view "$pr" --json headRefName --jq .headRefName) || return
-  worktree=$(git -C "$local_root" worktree list --porcelain | awk -v ref="refs/heads/${branch}" '
-    /^worktree / { path = substr($0, 10) }
-    $0 == "branch " ref { print path; exit }
-  ')
-
-  if [[ -n "$worktree" && "$worktree" != "$local_root" ]]; then
-    if [[ -n "$(git -C "$worktree" status --porcelain)" ]]; then
-      print -u2 "Worktree has uncommitted changes: ${worktree}"
-      return 1
-    fi
-    git -C "$worktree" switch --detach || return
-  fi
+  git_detach_branch_worktree "$branch" "$local_root" || return
 
   builtin cd "$local_root" || return
   gh pr checkout "$pr" || return
