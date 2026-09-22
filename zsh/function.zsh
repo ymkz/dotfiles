@@ -98,7 +98,7 @@ function gh_pr_open_local() {
 
   builtin cd "$local_root" || return
   gh pr checkout "$pr" || return
-  code . --reuse-window
+  edit .
 }
 
 function fzf_gh_pr_checkout() {

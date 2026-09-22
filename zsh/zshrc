@@ -22,8 +22,8 @@ setopt hist_reduce_blanks
 export TZ="Asia/Tokyo"
 export LESS="-R"
 export LANG="ja_JP.utf8"
-export EDITOR="code --wait"
-export FCEDIT="code --wait"
+export EDITOR="edit"
+export FCEDIT="edit"
 
 export XDG_CONFIG_HOME=${XDG_CONFIG_HOME:="${HOME}/.config"}
 export XDG_CACHE_HOME=${XDG_CACHE_HOME:="${HOME}/.cache"}
