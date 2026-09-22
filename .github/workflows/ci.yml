@@ -1,8 +1,10 @@
 name: ci
 
 on:
+  pull_request:
   workflow_dispatch:
   push:
+    branches: [main]
 
 permissions:
   contents: read
@@ -17,4 +19,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
-      - run: echo OK
+        with:
+          persist-credentials: false
+      - run: sudo apt-get update && sudo apt-get install --no-install-recommends --yes zsh
+      - run: |
+          bash -n setup.sh bin/xdg-open
+          zsh -n zsh/*.zsh
+      - run: shellcheck setup.sh bin/xdg-open
