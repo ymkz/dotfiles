@@ -21,11 +21,8 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
           persist-credentials: false
-      - name: Install shellcheck
-        run: sudo apt-get update && sudo apt-get install --no-install-recommends --yes shellcheck zsh
-      - name: Check shell syntax
-        run: |
+      - run: sudo apt-get update && sudo apt-get install --no-install-recommends --yes zsh
+      - run: |
           bash -n setup.sh bin/xdg-open
           zsh -n zsh/*.zsh
-      - name: Run shellcheck
-        run: shellcheck setup.sh bin/xdg-open
+      - run: shellcheck setup.sh bin/xdg-open
