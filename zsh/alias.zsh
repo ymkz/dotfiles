@@ -36,7 +36,6 @@ alias gam='git commit --amend -C HEAD'
 alias gcf='git commit --amend -m'
 alias gg='git fetch --all --prune && git branch -vv | awk "/: gone]/{print \$1}" | xargs -r git branch -D'
 
-alias coder='code . --reuse-window'
 alias oc='opencode'
 alias occ='opencode --continue'
 alias pic='pi --continue'
