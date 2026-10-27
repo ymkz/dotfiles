@@ -9,7 +9,7 @@ curl -sSfL https://raw.githubusercontent.com/ymkz/dotfiles/HEAD/setup.sh | bash
 ## Skills
 
 `skills/` contains locally maintained skills. `setup.sh` links `commit-ja`,
-`pr-writer`, and `show-me` into `~/.agents/skills/` for use across
+`pr-writer`, `show-me`, and `code-review` into `~/.agents/skills/` for use across
 repositories. Move an existing non-symlink directory out of the destination
 before running setup.
 

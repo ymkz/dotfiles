@@ -81,6 +81,7 @@ mkdir -p "${HOME}/.agents/skills"
 ln -nfsT "${DOTFILES_DIR}/skills/commit-ja" "${HOME}/.agents/skills/commit-ja"
 ln -nfsT "${DOTFILES_DIR}/skills/pr-writer" "${HOME}/.agents/skills/pr-writer"
 ln -nfsT "${DOTFILES_DIR}/skills/show-me" "${HOME}/.agents/skills/show-me"
+ln -nfsT "${DOTFILES_DIR}/skills/code-review" "${HOME}/.agents/skills/code-review"
 
 ### install agentsview
 ### - https://www.agentsview.io/quickstart/
