@@ -87,18 +87,6 @@ ln -nfsT "${DOTFILES_DIR}/skills/code-review" "${HOME}/.agents/skills/code-revie
 ### - https://www.agentsview.io/quickstart/
 curl -fsSL https://agentsview.io/install.sh | bash
 
-# ### install claude code
-# ### - https://code.claude.com/docs/ja/overview
-# curl -fsSL https://claude.ai/install.sh | bash
-
-# ### install opencode
-# ### - https://opencode.ai/
-# curl -fsSL https://opencode.ai/install | bash
-
-# ### install herdr
-# ### - https://herdr.dev/
-# curl -fsSL https://herdr.dev/install.sh | sh
-
 ### install and setup docker
 ### - https://docs.docker.com/engine/install/ubuntu/#install-using-the-convenience-script
 ### - https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user
