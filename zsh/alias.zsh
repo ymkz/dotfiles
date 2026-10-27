@@ -1,6 +1,5 @@
 alias cdw='cd ~/work'
 alias cds='cd ~/sandbox'
-alias cat='gat'
 alias mv='mv -iv'
 alias ls='eza'
 alias la='eza -A'

@@ -1,7 +1,3 @@
-function gess() {
-  gat --force-color "$@" | less -R
-}
-
 function fzf_ghq_repository() {
   local root
   local repository
