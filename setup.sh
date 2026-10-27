@@ -76,6 +76,17 @@ mise doctor
 ### - https://developers.openai.com/codex/cli
 curl -fsSL https://chatgpt.com/codex/install.sh | CODEX_NON_INTERACTIVE=1 sh
 
+### deploy user skills
+mkdir -p "${HOME}/.agents/skills"
+for skill in commit-ja pr-writer show-me tanteki; do
+  skill_path="${HOME}/.agents/skills/${skill}"
+  if [[ -e "${skill_path}" && ! -L "${skill_path}" ]]; then
+    printf 'Move the existing skill before linking: %s\n' "${skill_path}" >&2
+    exit 1
+  fi
+  ln -nfs "${DOTFILES_DIR}/skills/${skill}" "${skill_path}"
+done
+
 ### install agentsview
 ### - https://www.agentsview.io/quickstart/
 curl -fsSL https://agentsview.io/install.sh | bash
