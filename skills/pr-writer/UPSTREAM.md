@@ -11,6 +11,7 @@
 
 - Mark the skill as modified by ymkz and retain the Apache-2.0 license.
 - Default to Japanese titles and natural prose; use bullets for parallel items.
+- Use background/purpose, changes, and verification sections unless a repository template specifies the structure; add migration notes or caveats when useful.
 - Use standard Conventional Commit types, including `refactor` rather than `ref`.
 - Honor repository templates and explicit language/type conventions.
 - Distinguish drafting copy from branch creation, commits, pushes, and remote edits.

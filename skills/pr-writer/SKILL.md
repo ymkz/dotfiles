@@ -9,7 +9,7 @@ license: Apache-2.0
 Modified by ymkz: Japanese titles and prose, standard commit types, repository
 templates, and scope-aware operations. See [UPSTREAM.md](UPSTREAM.md) for origin.
 
-Write the PR body as a cover note for reviewers, not a changelog, template,
+Write the PR body as a sectioned explanation for reviewers, not a changelog,
 validation log, or file-by-file summary.
 
 Write both the title subject and body in Japanese, unless the user or repository
@@ -78,23 +78,29 @@ when they differ. For example: `fix(auth): ログイン失敗時の入力内容�
 
 ## Body Shape
 
-Choose the minimum useful shape:
-
-| Change | Include |
-|--------|---------|
-| Small or obvious | One concise paragraph without headings. |
-| Feature, bug fix, or refactor | Changed behavior and effect; add root cause, unchanged behavior, or non-obvious approach when relevant. |
-| Contract or breaking change | Affected API, schema, payload, config, permission, storage, or CLI surface; include compatibility and migration guidance. |
-| Operational, visual, or workflow change | User/operator effect, measured impact, failure modes, or flow when useful. |
-| Broad, generated, or cross-cutting change | Organizing principle, why the breadth is necessary, and where review should start. |
-
-Default:
+When the repository has no PR template, use these three sections even for
+small changes. Keep each section proportional to the change and write natural
+paragraphs rather than forcing every sentence into a bullet.
 
 ```markdown
-<What changed and what effect it has.>
+## 背景・目的
 
-<Why the approach, risk, migration, or review focus matters, if not obvious.>
+<The concrete problem or reason for the change.>
+
+## 変更内容
+
+<Changed behavior, its effect, and the approach when it helps explain the change.>
+
+## 確認したこと
+
+<Checks actually performed and what they establish. If none, state that clearly.>
 ```
+
+Add sections such as `移行手順` or `注意点` when compatibility, rollout, or
+risks require them. Include before/after examples for contract changes, and
+review guidance for broad changes when useful. Do not invent motivation,
+validation, or results to fill a section. Distinguish local checks from CI
+and report unfinished checks as pending.
 
 For review-feedback updates, describe the resulting PR as a whole rather than
 the sequence of revisions.
@@ -114,12 +120,9 @@ notice. Omit it when prose is clearer.
 
 ## Boundaries
 
-- Do not add default `Summary`, `Changes`, or `Test Plan` sections unless the
-  repository template requires them.
-- Omit routine validation unless it changes risk assessment or explains
-  meaningful regression coverage. For docs, skills, copy, or config changes,
-  omit it by default.
-- Do not paste commands, CI logs, validation dumps, commit logs, placeholders,
+- Prefer repository template headings; otherwise use the three Japanese
+  sections above. Summarize verification results in `確認したこと`.
+- Do not paste CI logs, validation dumps, commit logs, placeholders,
   or exhaustive file lists.
 - Never include customer or organization names, user emails, support ticket
   contents, secrets, or PII.
@@ -152,13 +155,29 @@ typo-only, formatting-only, and rename-only follow-ups.
 Small change:
 
 ```markdown
+## 背景・目的
+
+AI Customizations セクションが初期表示でサイドバーを圧迫していました。
+
+## 変更内容
+
 AI Customizations セクションを初期状態で折りたたみ、必要になるまで
 サイドバーの表示領域を圧迫しないようにしました。開閉状態の保存は従来どおりです。
+
+## 確認したこと
+
+未検証です。
 ```
 
 Breaking contract:
 
 ````markdown
+## 背景・目的
+
+実行ログをチャンクごとに処理できるようにします。
+
+## 変更内容
+
 実行ログをスキル単位からチャンク単位のレコードへ変更しました。
 トップレベルの `findings` を読む処理は、各レコードの `chunk.findings` を
 読むように変更する必要があります。
@@ -174,4 +193,8 @@ After:
 ```json
 {"schemaVersion": 1, "chunk": {"index": 1, "findings": [...]}}
 ```
+
+## 確認したこと
+
+未検証です。
 ````
