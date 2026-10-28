@@ -19,6 +19,30 @@ retains the upstream terms. To incorporate upstream updates, compare against the
 apply the changes you want, then update `UPSTREAM.md` and any affected notices.
 Upstream updates are not applied automatically.
 
+## GitHub Actions
+
+Workflow dependencies are pinned in `.github/workflows/actions.lock`, generated
+with [`gh-actions-lock`](https://github.com/github/gh-actions-lock). After
+authenticating with `gh auth login`, install the extension:
+
+```sh
+gh extension install github/gh-actions-lock --pin v0.4.0
+```
+
+After adding a workflow or changing a `uses:` reference, regenerate and verify
+the lockfile:
+
+```sh
+gh actions-lock
+gh actions-lock --verify
+gh actions-lock --verify-local
+```
+
+Commit the workflow changes and lockfile together. Do not edit the lockfile by
+hand. CI verifies it with `gh actions-lock --verify`; Renovate regenerates it
+when updating actions. Keep the extension version in CI, Renovate's
+`constraints.ghActionsLock`, and these instructions in sync.
+
 ## Reset WSL
 
 ```sh { name=wsl-uninstall }
