@@ -9,14 +9,14 @@
 [user]
 	name = Muse
 	email = ymkz@users.noreply.github.com
-	signingkey = /home/ymkz/.ssh/id_ed25519_muse_github.pub
+	signingkey = ~/.ssh/id_ed25519_muse_github.pub
 [core]
-	sshCommand = ssh -F /home/ymkz/.ssh/config_muse
+	sshCommand = ssh -F ~/.ssh/config_muse
 [gpg]
 	format = ssh
 [gpg "ssh"]
 	program = ssh-keygen
-	allowedSignersFile = /home/ymkz/.config/git/signers_muse
+	allowedSignersFile = ~/.config/git/signers_muse
 [commit]
 	gpgsign = true
 [tag]
