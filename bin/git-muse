@@ -1,0 +1,4 @@
+#!/bin/sh
+# Run git as Muse (agent): dedicated identity, signing key and SSH
+# transport. The configuration lives in git/config_muse in dotfiles.
+GIT_CONFIG_GLOBAL="${HOME}/.config/git/config_muse" exec git "$@"
