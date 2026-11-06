@@ -42,6 +42,7 @@ mkdir -p "${XDG_DATA_HOME}/zsh"
 mkdir -p "${HOME}/.local/bin"
 ln -nfs "${DOTFILES_DIR}/bin/xdg-open" "${HOME}/.local/bin/xdg-open"
 ln -nfs xdg-open "${HOME}/.local/bin/open"
+ln -nfs "${DOTFILES_DIR}/bin/git-muse" "${HOME}/.local/bin/git-muse"
 
 ### deploy dotfiles
 ln -nfs "${DOTFILES_DIR}/zsh/zshrc" "${HOME}/.zshrc"
@@ -58,6 +59,11 @@ mkdir -p "${XDG_CONFIG_HOME}/git"
 ln -nfs "${DOTFILES_DIR}/git/config" "${XDG_CONFIG_HOME}/git/config"
 ln -nfs "${DOTFILES_DIR}/git/ignore" "${XDG_CONFIG_HOME}/git/ignore"
 ln -nfs "${DOTFILES_DIR}/git/signers" "${XDG_CONFIG_HOME}/git/signers"
+ln -nfs "${DOTFILES_DIR}/git/config_muse" "${XDG_CONFIG_HOME}/git/config_muse"
+ln -nfs "${DOTFILES_DIR}/git/signers_muse" "${XDG_CONFIG_HOME}/git/signers_muse"
+
+mkdir -p "${HOME}/.ssh"
+ln -nfs "${DOTFILES_DIR}/ssh/config_muse" "${HOME}/.ssh/config_muse"
 
 mkdir -p "${XDG_CONFIG_HOME}/mise"
 ln -nfs "${DOTFILES_DIR}/mise/config.toml" "${XDG_CONFIG_HOME}/mise/config.toml"

@@ -54,3 +54,19 @@ after restarting the terminal
 ```sh { name=wsl-install }
 wsl.exe --install Ubuntu
 ```
+
+## Muse agent environment
+
+`git/config_muse`, `git/signers_muse`, `bin/git-muse`, and `ssh/config_muse`
+configure the dedicated git environment used by the Muse agent in WSL:
+a separate identity (name `Muse`), SSH transport, and commit signing with
+the agent's own key, without touching the user's git configuration.
+`setup.sh` links them into place; run git through `git-muse` to use them.
+
+The agent's private key (`~/.ssh/id_ed25519_muse_github`) is NOT in this
+repository. If it is lost, regenerate it and re-register the public key:
+
+```sh
+ssh-keygen -t ed25519 -f ~/.ssh/id_ed25519_muse_github -C "muse-wsl-automation on qk"
+# Register the .pub on GitHub twice: as an Authentication Key and as a Signing Key.
+```

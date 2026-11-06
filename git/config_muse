@@ -1,0 +1,23 @@
+# Git config for the Muse agent (WSL automation).
+# Activated only through the `git-muse` wrapper (GIT_CONFIG_GLOBAL).
+# The user's own config is included first and never modified here.
+# NOTE: the private key (~/.ssh/id_ed25519_muse_github) is NOT in this
+# repository. If it is lost, regenerate it and re-register the public
+# key on GitHub as both an Authentication Key and a Signing Key.
+[include]
+	path = ~/.config/git/config
+[user]
+	name = Muse
+	email = ymkz@users.noreply.github.com
+	signingkey = /home/ymkz/.ssh/id_ed25519_muse_github.pub
+[core]
+	sshCommand = ssh -F /home/ymkz/.ssh/config_muse
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	program = ssh-keygen
+	allowedSignersFile = /home/ymkz/.config/git/signers_muse
+[commit]
+	gpgsign = true
+[tag]
+	gpgsign = true
