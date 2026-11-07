@@ -84,10 +84,15 @@ curl -fsSL https://chatgpt.com/codex/install.sh | CODEX_NON_INTERACTIVE=1 sh
 
 ### deploy user skills
 mkdir -p "${HOME}/.agents/skills"
-ln -nfsT "${DOTFILES_DIR}/skills/commit-ja" "${HOME}/.agents/skills/commit-ja"
-ln -nfsT "${DOTFILES_DIR}/skills/pr-writer" "${HOME}/.agents/skills/pr-writer"
-ln -nfsT "${DOTFILES_DIR}/skills/show-me" "${HOME}/.agents/skills/show-me"
+ln -nfsT "${DOTFILES_DIR}/skills/agent-skill" "${HOME}/.agents/skills/agent-skill"
+ln -nfsT "${DOTFILES_DIR}/skills/code-comment" "${HOME}/.agents/skills/code-comment"
 ln -nfsT "${DOTFILES_DIR}/skills/code-review" "${HOME}/.agents/skills/code-review"
+ln -nfsT "${DOTFILES_DIR}/skills/commit-ja" "${HOME}/.agents/skills/commit-ja"
+ln -nfsT "${DOTFILES_DIR}/skills/common-rules-for-agent-instructions" "${HOME}/.agents/skills/common-rules-for-agent-instructions"
+ln -nfsT "${DOTFILES_DIR}/skills/github" "${HOME}/.agents/skills/github"
+ln -nfsT "${DOTFILES_DIR}/skills/persistent-instructions" "${HOME}/.agents/skills/persistent-instructions"
+ln -nfsT "${DOTFILES_DIR}/skills/show-me" "${HOME}/.agents/skills/show-me"
+ln -nfsT "${DOTFILES_DIR}/skills/writing" "${HOME}/.agents/skills/writing"
 
 ### install agentsview
 ### - https://www.agentsview.io/quickstart/
