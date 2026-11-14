@@ -1,5 +1,5 @@
 ---
-name: commit-ja
+name: git-commit
 description: ステージ済みの変更から日本語の Conventional Commit メッセージを作成し、依頼されればコミットする。日本語のコミットメッセージを求められたとき、またはプロジェクトのコミット規約に指定されているときに使う。
 license: MIT
 ---
